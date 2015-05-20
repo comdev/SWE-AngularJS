@@ -15,11 +15,12 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 /// <reference path="../../typings/angular2/angular2.d.ts" />
 var angular2_1 = require('angular2/angular2');
 //import{listArtikel} from 'component/artikelverwaltung/artikellist/artikellist';
-var homeComponent = (function () {
-    function homeComponent() {
+var home = (function () {
+    function home(router) {
         this.logged = false;
+        this.router = router;
     }
-    homeComponent.prototype.logIn = function (name, pw) {
+    home.prototype.logIn = function (name, pw) {
         if (name !== null && pw !== null) {
             this.logged = true;
             this.name = name;
@@ -27,7 +28,7 @@ var homeComponent = (function () {
         }
         console.log("login aufgerufen");
     };
-    homeComponent = __decorate([
+    home = __decorate([
         angular2_1.Component({
             selector: 'home'
         }),
@@ -35,7 +36,8 @@ var homeComponent = (function () {
             url: "components/home/home.html",
             directives: [angular2_1.If]
         }), 
-        __metadata('design:paramtypes', [])
-    ], homeComponent);
-    return homeComponent;
+        __metadata('design:paramtypes', [(typeof Router !== 'undefined' && Router) || Object])
+    ], home);
+    return home;
 })();
+exports.home = home;

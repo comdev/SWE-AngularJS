@@ -1,22 +1,21 @@
 /**
  * Created by yaelwidmann on 20.05.15.
  */
-var module_1 = require();
 var ArtikelResource = (function () {
     function ArtikelResource() {
-        var tasche = new module_1.Artikel();
+        var tasche = new Artikel();
         tasche.id = 1;
         tasche.bezeichnung = "Tasche";
         tasche.version = 1;
         tasche.preis = 50;
         tasche.anzahlWarenkorb = 0;
-        var rucksack = new module_1.Artikel();
+        var rucksack = new Artikel();
         rucksack.id = 1;
         rucksack.bezeichnung = "Rucksack";
         rucksack.version = 1;
         rucksack.preis = 50;
         rucksack.anzahlWarenkorb = 0;
-        var geldbeutel = new module_1.Artikel();
+        var geldbeutel = new Artikel();
         geldbeutel.id = 1;
         geldbeutel.bezeichnung = "Geldbeutel";
         geldbeutel.version = 1;
@@ -41,3 +40,4 @@ var ArtikelResource = (function () {
     };
     return ArtikelResource;
 })();
+//# sourceMappingURL=ArtikelResource.js.map

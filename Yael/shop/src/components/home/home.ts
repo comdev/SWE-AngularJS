@@ -12,12 +12,14 @@ import{Component,View,If,bootstrap} from 'angular2/angular2';
     url:"components/home/home.html",
     directives:[If]
 })
-class homeComponent{
+export class home{
     logged:boolean;
     name:string;
+    router:Router;
 
-    constructor(){
+    constructor(router: Router){
         this.logged = false;
+        this.router = router;
     }
     logIn(name:string, pw:string){
         if(name !== null && pw!==null){
