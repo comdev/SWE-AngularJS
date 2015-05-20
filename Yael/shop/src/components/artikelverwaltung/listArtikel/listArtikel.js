@@ -1,3 +1,8 @@
+/**
+ * Created by yaelwidmann on 16.05.15.
+ */
+///<reference path='../../../typings/angular2/angular2.d.ts'/>
+///<reference path='../../../typings/angular2/router.d.ts'/>
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -9,16 +14,12 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/**
- * Created by yaelwidmann on 16.05.15.
- */
-///<reference path='../../../typings/angular2/angular2.d.ts'/>
 var angular2_1 = require('angular2/angular2');
-var module_1 = require();
+var ArtikelResource_ts_1 = require('../ArtikelResource.ts');
 var ArtikelComponent = (function () {
     function ArtikelComponent() {
         this.neuerArtikel = false;
-        this.artikelResource = new module_1.ArtikelResource();
+        this.artikelResource = new ArtikelResource_ts_1.ArtikelResource();
         this.artikelArray = this.artikelResource.getAllArtikel();
     }
     ArtikelComponent.prototype.onClickCreateArticle = function () {

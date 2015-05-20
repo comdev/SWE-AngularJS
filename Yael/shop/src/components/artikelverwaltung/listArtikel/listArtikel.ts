@@ -2,9 +2,11 @@
  * Created by yaelwidmann on 16.05.15.
  */
 ///<reference path='../../../typings/angular2/angular2.d.ts'/>
+///<reference path='../../../typings/angular2/router.d.ts'/>
+
 import{Component,bootstrap,View} from 'angular2/angular2';
-import{ArtikelResource};
-import{Artikel};
+import{ArtikelResource} from '../ArtikelResource.ts';
+import{Artikel} from '../Artikel.ts';
 @Component({
     selector:'listArtikel'
 })
