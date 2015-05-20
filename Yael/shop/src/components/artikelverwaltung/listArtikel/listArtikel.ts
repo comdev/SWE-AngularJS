@@ -16,7 +16,7 @@ import{Artikel} from '../Artikel.ts';
 <li *for ="#artikel of artikelArray">
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">{{artikel.bezeichnung}}</div>
-<div class="col-xs-2 col-sm-4 col-md-2 col-lg-2">{{artikel.anzahlWarenkorb}}}</div>
+<div class="col-xs-2 col-sm-4 col-md-2 col-lg-2"></div>
 <div class="col-xs-3 col-sm-3"><button (click)="onClickBuy(artikel)" class="btn btn-primary btn-md">Kaufen</button></div>
 <div class="col-xs-3 col-sm-3"><button (click)="onClickDelete(artikel)" class="btn btn-primary btn-md">Löschen</button></div>
 </li>

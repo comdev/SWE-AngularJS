@@ -7,5 +7,4 @@ interface Artikel{
     preis: number;
     version: number;
     ausgesondert: boolean;
-    anzBestellt:number;
 }

@@ -12,7 +12,6 @@ class ArtikelResource{
     tasche.bezeichnung = "Tasche";
     tasche.version = 1;
     tasche.preis = 50;
-        tasche.anzahlWarenkorb=0;
 
 
         let rucksack= new Artikel();
@@ -20,14 +19,12 @@ class ArtikelResource{
         rucksack.bezeichnung = "Rucksack";
         rucksack.version = 1;
         rucksack.preis = 50;
-        rucksack.anzahlWarenkorb=0;
 
         let geldbeutel= new Artikel();
         geldbeutel.id = 1;
         geldbeutel.bezeichnung = "Geldbeutel";
         geldbeutel.version = 1;
         geldbeutel.preis = 50;
-        geldbeutel.anzahlWarenkorb=0;
         artikel.push(tasche);
         artikel.push(rucksack);
         artikel.push(geldbeutel);
