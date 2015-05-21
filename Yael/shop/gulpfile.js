@@ -13,6 +13,16 @@ var imagemin = require('gulp-imagemin');
 
 var ts = require('gulp-typescript');
 
+var webserver = require('gulp-webserver')
+
+//Webserver starten
+gulp.task('webserver', function() {
+  gulp.src('src')
+    .pipe(webserver({
+      open: true,
+    }));
+});
+
 // JS hint task
 gulp.task('jshint', function() {
   gulp.src('./src/scripts/*.js')
