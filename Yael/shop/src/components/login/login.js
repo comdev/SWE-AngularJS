@@ -14,19 +14,28 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
  */
 ///<reference path="../../typings/angular2/angular2.d.ts"/>
 var angular2_1 = require('angular2/angular2');
+var KundeResource_1 = require('../kundenverwaltung/KundeResource');
+var Kunde_1 = require('../kundenverwaltung/Kunde');
 var loginComponent = (function () {
-    function loginComponent() {
+    function loginComponent(kundeRes) {
+        this.kundeRes = kundeRes;
+        this.kunde = null;
+        this.eingeloggt = false;
     }
-    loginComponent.prototype.onCLickLogin = function (name, pw) {
+    loginComponent.prototype.onClickLogin = function (name, pw) {
+        this.s = this.kundeRes.getKundeById(1);
+        this.eingeloggt = true;
+        //this.kunde=this.kundeRes.getKundeById(1);
     };
     loginComponent = __decorate([
         angular2_1.Component({
-            selector: 'login'
+            selector: 'login',
+            injectables: [KundeResource_1.KundeResource, Kunde_1.Kunde]
         }),
         angular2_1.View({
-            template: "<div class=\"container\">\n<div class=\"row\">\n<input #name type=\"text\"  placeholder=\"Email\" required autofocus>\n<input #pw type=\"password\" class=\"form-control\" placeholder=\"Password\" required>\n<button (click)=\"onClickLogin(name.value, pw.value)\" class=\"btn btn-primary btn-md\" type=\"submit\">\nLogin</button>\n<a href=\"#\" class=\"pull-right need-help\">Brauchen Sie Hilfe? </a><span class=\"clearfix\"></span>\n</div>\n<a href=\"#\" class=\"text-center new-account\">Sign in</a>\n</div>\n</div>"
+            templateUrl: 'components/login/login'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [KundeResource_1.KundeResource])
     ], loginComponent);
     return loginComponent;
 })();

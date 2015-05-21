@@ -19,7 +19,9 @@ var navComponent = (function () {
         angular2_1.Component({
             selector: "nav-bar"
         }),
-        angular2_1.View({ template: "<nav class=\"navbar navbar-default\">\n<div class=\"container-fluid\">\n<div class=\"navbar-header\">\n<a class=\"navbar-brand\" href=\"#\">Webshop</a>\n</div>\n<div>\n    <ul class=\"nav navbar-nav\">\n<li class=\"active\"><a href=\"home.html\">Home</a></li>\n<li><a href=\"artikel.html\">Unsere Artikel</a></li>\n<li><a href=\"bestellung.html\">Ihre Bestellungen</a></li>\n<li><a href=\"kunde.htmml\">Alle Kunden</a></li>\n</ul>\n</div>\n</div>\n</nav>" }), 
+        angular2_1.View({
+            templateUrl: 'components/navbar/navbar.html'
+        }), 
         __metadata('design:paramtypes', [])
     ], navComponent);
     return navComponent;

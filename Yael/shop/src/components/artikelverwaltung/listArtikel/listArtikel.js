@@ -2,7 +2,6 @@
  * Created by yaelwidmann on 16.05.15.
  */
 ///<reference path='../../../typings/angular2/angular2.d.ts'/>
-///<reference path='../../../typings/angular2/router.d.ts'/>
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -15,31 +14,23 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var ArtikelResource_ts_1 = require('../ArtikelResource.ts');
+var ArtikelResource_1 = require('../ArtikelResource');
 var ArtikelComponent = (function () {
-    function ArtikelComponent() {
-        this.neuerArtikel = false;
-        this.artikelResource = new ArtikelResource_ts_1.ArtikelResource();
-        this.artikelArray = this.artikelResource.getAllArtikel();
+    function ArtikelComponent(res) {
+        this.artikelArray = res.getAllArtikel();
     }
-    ArtikelComponent.prototype.onClickCreateArticle = function () {
-        this.neuerArtikel = true;
-    };
-    ArtikelComponent.prototype.onClickBuy = function (artikel) {
-        artikel.anzahlWarenkorb = artikel.anzahlWarenkorb + 1;
-    };
-    ArtikelComponent.prototype.onClickDelete = function (artikel) {
-        artikel.anzahlWarenkorb = artikel.anzahlWarenkorb - 1;
-    };
     ArtikelComponent = __decorate([
         angular2_1.Component({
-            selector: 'listArtikel'
+            selector: 'listArtikel',
+            injectables: [ArtikelResource_1.ArtikelResource]
         }),
         angular2_1.View({
-            template: "<ul>\n<li *for =\"#artikel of artikelArray\">\n<div class=\"row\">\n<div class=\"col-xs-4 col-sm-4 col-md-2 col-lg-2\">{{artikel.bezeichnung}}</div>\n<div class=\"col-xs-2 col-sm-4 col-md-2 col-lg-2\">{{artikel.anzahlWarenkorb}}}</div>\n<div class=\"col-xs-3 col-sm-3\"><button (click)=\"onClickBuy(artikel)\" class=\"btn btn-primary btn-md\">Kaufen</button></div>\n<div class=\"col-xs-3 col-sm-3\"><button (click)=\"onClickDelete(artikel)\" class=\"btn btn-primary btn-md\">L\u00F6schen</button></div>\n</li>\n</ul>\n<button (click)=\"onClickCreateArticle()\" class=\"btn btn-primary btn-md\" type=\"submit\">\nneuer Artikel anlegen</button>"
+            templateUrl: 'components/artikelverwaltung/listArtikel/listArtikel.html',
+            directives: [angular2_1.For]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ArtikelResource_1.ArtikelResource])
     ], ArtikelComponent);
     return ArtikelComponent;
 })();
+exports.ArtikelComponent = ArtikelComponent;
 angular2_1.bootstrap(ArtikelComponent);

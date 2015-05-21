@@ -1,23 +1,23 @@
 /**
  * Created by yaelwidmann on 20.05.15.
  */
-import{Bestellung};
+import{Bestellung} from './Bestellung';
 class BestellResource{
     bestellungen:Array<Bestellung>;
     constructor(){
-        var bestellung1 =new Bestellung();
+        let bestellung1 =new Bestellung();
         bestellung1.id = 1;
         bestellung1.kundeId = 1;
 
-        var bestellung2 =new Bestellung();
+        let bestellung2 =new Bestellung();
         bestellung1.id = 2;
         bestellung1.kundeId = 1;
 
-        var bestellung3 =new Bestellung();
+        let bestellung3 =new Bestellung();
         bestellung1.id = 3;
         bestellung1.kundeId = 1;
 
-        var bestellung4 =new Bestellung();
+        let bestellung4 =new Bestellung();
         bestellung1.id = 4;
         bestellung1.kundeId = 2;
 
@@ -27,7 +27,7 @@ class BestellResource{
         this.bestellungen.push(bestellung4);
     }
     getBestellungenByKundenId(kundeid:number){
-        var bestellungen = [];
+        let bestellungen = [];
         for(bestellung in this.bestellungen){
             if(bestellung.kundeId.isEqual(kundeid)){
                 bestellungen.push(bestellung);

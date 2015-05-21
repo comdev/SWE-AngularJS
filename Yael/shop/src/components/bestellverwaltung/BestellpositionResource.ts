@@ -1,23 +1,23 @@
 /**
  * Created by yaelwidmann on 20.05.15.
  */
-import {Bestellposition};
+import {Bestellposition} from './Bestellposition';
 class BestellpositionResource{
     bestellpositionen: Array<Bestellposition>;
     constructor(){
-        var bestellpostion1 = new Bestellpostion();
+        let bestellpostion1 = new Bestellpostion();
         bestellpostion1.bestellId = 1;
         bestellpostion1.id=1;
         bestellpostion1.menge=7;
         bestellpostion1.artikelId=1;
 
-        var bestellpostion2 = new Bestellpostion();
+        let bestellpostion2 = new Bestellpostion();
         bestellpostion1.bestellId = 2;
         bestellpostion1.id=2;
         bestellpostion1.menge=9;
         bestellpostion1.artikelId=5;
 
-        var bestellpostion3 = new Bestellpostion();
+        let bestellpostion3 = new Bestellpostion();
         bestellpostion1.bestellId = 3;
         bestellpostion1.id=3;
         bestellpostion1.menge=4;
@@ -37,8 +37,8 @@ class BestellpositionResource{
             }
         }
     }
-    getBestellPositionById(bestellId:number){
-        var bestellungen= [];
+    getBestellPositionByBestellId(bestellId:number){
+        let bestellungen= [];
         for(bestellpos in this.bestellpositionen){
             if(bestellId.id.isEqual(bestellId)){
                 bestellungen.push(bestellpos);

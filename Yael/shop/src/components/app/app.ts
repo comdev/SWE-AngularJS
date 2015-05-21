@@ -3,9 +3,9 @@
  */
 ///<reference path="../../typings/angular2/angular2.d.ts"/>
 import{View,Component} from 'angular2/angular2';
-import {Router, RouterOutlet} from 'angular2/router';
 import {Home} from '../home/home';
 import {Login} from '../login/login';
+import {RouteConfig} from 'angular2/router';
 
 @Component({
     selector:'app'
@@ -14,6 +14,7 @@ import {Login} from '../login/login';
     template:`<router-outlet></router-outlet>`
     directives:[RouterOutlet]
 })
+
 export class App{
     constructor(router:Router){
         router.config('/home',Home)

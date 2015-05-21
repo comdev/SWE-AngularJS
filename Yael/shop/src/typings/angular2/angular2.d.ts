@@ -282,6 +282,11 @@ interface _ViewArg {
    */
   directives?: List<Type>;
 }
+interface _RouteConfigArg{
+    path: string;
+    component: Object;
+    alias?: string;
+}
   
 declare module "angular2/angular2" {
   /**
@@ -533,6 +538,8 @@ declare module "angular2/angular2" {
    * - `<template [for]="#item" [of]="items" #i="index"><li>...</li></template>`
    *
    */
+  function RouteConfig(arg: _RouteConfigArg): (target: any) => any;
+
   function For(): void;
   
   /**
@@ -620,3 +627,7 @@ declare module "angular2/di" {
    */
    function bind(token: any): any;
 }
+/*declare module "angular2/router" {
+    function RouteConfig(arg: _RouteConfigArg): (target: any) => any;
+
+}*/

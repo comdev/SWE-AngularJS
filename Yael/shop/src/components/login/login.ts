@@ -3,28 +3,31 @@
  */
 ///<reference path="../../typings/angular2/angular2.d.ts"/>
 import{Component,View, bootstrap} from 'angular2/angular2';
+import{KundeResource} from '../kundenverwaltung/KundeResource';
+import{Kunde} from '../kundenverwaltung/Kunde';
 
 @Component({
-    selector:'login'
+    selector:'login',
+    injectables:[KundeResource, Kunde]
 })
 @View({
-    template:`<div class="container">
-<div class="row">
-<input #name type="text"  placeholder="Email" required autofocus>
-<input #pw type="password" class="form-control" placeholder="Password" required>
-<button (click)="onClickLogin(name.value, pw.value)" class="btn btn-primary btn-md" type="submit">
-Login</button>
-<a href="#" class="pull-right need-help">Brauchen Sie Hilfe? </a><span class="clearfix"></span>
-</div>
-<a href="#" class="text-center new-account">Sign in</a>
-</div>
-</div>`
+    templateUrl:'components/login/login'
 })
 class loginComponent{
-    constructor(){
+    s:string;
+    kunde:Kunde;
+    kundeRes:KundeResource;
+    eingeloggt:boolean;
 
+    constructor(kundeRes:KundeResource){
+        this.kundeRes= kundeRes;
+        this.kunde=null;
+        this.eingeloggt = false;
     }
-    onCLickLogin(name:string, pw:string){
+    onClickLogin(name:string, pw:string){
+        this.s=this.kundeRes.getKundeById(1);
+        this.eingeloggt = true;
+        //this.kunde=this.kundeRes.getKundeById(1);
 
     }
 }

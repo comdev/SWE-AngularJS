@@ -1,0 +1,10 @@
+<div class="container">
+	<div [hidden]="eingeloggt" class="row">
+		<input #name type="text"  placeholder="Email" required autofocus>
+		<input #pw type="text"  placeholder="Passwort" required >
+		<button (click)="onClickLogin(name.value, pw.value)" class="btn btn-primary" type="submit">
+			Login</button>
+	<a href="#" class="text-center new-account">Sign in</a>
+</div>
+	<div [hidden]="!eingeloggt"><label>Hallo {{s}}</label></div>
+</div>

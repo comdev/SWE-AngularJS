@@ -1,0 +1,28 @@
+<div>
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<label>Bezeichnung</label>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+			<input #bezeichnung type="text"  required autofocus>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<label>Preis</label>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+			<input #preis type="text" required autofocus>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<label>Version</label>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+			<input #version type="text" required autofocus>
+		</div>
+	</div>
+	<button (click)="onClickCreate(bezeichnung.value, preis.value, version.value)" class="btn btn-primary" type="submit">
+		Artikel anlegen</button>
+</div>

@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<div><listArtikel></listArtikel></div>
+<div [hidden]="!neuerArtikel"><createArtikel></createArtikel></div>
+
+<div  [hidden]="neuerArtikel"><button (click)="onClickCreateArticle()" class="btn btn-primary btn-md" type="submit">neuer Artikel anlegen</button></div>
+<script>System.import('components/artikelverwaltung/listArtikel/listArtikel');</script>
+<script>System.import('components/artikelverwaltung/createArtikel/createArtikel');</script>
