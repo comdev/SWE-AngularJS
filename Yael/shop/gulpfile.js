@@ -90,7 +90,7 @@ gulp.task('compress', function() {
 });
 
 //default gulp task -  run any number of dependent sub-tasks - only if changes are made
-gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles'], function() {
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'webserver'], function() {
   // watch for HTML changes
   gulp.watch('./src/*.html', function() {
     gulp.run('htmlpage');
