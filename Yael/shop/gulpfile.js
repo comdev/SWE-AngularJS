@@ -12,14 +12,15 @@ var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 
 var ts = require('gulp-typescript');
+var typescript = require('gulp-tsc');
 
-var webserver = require('gulp-webserver')
+var webserver = require('gulp-webserver');
 
 //Webserver starten
 gulp.task('webserver', function() {
   gulp.src('src')
     .pipe(webserver({
-      open: true,
+      open: true
     }));
 });
 
@@ -89,8 +90,20 @@ gulp.task('compress', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('typescript', function(){
+  gulp.src(['*.ts'])
+      .pipe(typescript({
+        target: 'ES5',
+        outDir: 'build',
+        emitError: true,
+        sourcemap: false
+      }))
+      .pipe(gulp.dest("."));
+});
+
+
 //default gulp task -  run any number of dependent sub-tasks - only if changes are made
-gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'webserver'], function() {
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'typescript', 'webserver', typescript], function() {
   // watch for HTML changes
   gulp.watch('./src/*.html', function() {
     gulp.run('htmlpage');
