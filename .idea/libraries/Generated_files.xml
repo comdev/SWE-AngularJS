@@ -2,30 +2,32 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/Artikel.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/BestellpositionResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/Bestellposition.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/artikelController.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/ArtikelResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/BestellResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/KundeResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/tools/broccoli/html-replace/index.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/importedSrc.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/Bestellung.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/app/app.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/readTypeScriptModules/orderingOfMembers.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/WarenkorbResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/atscript/src/change_detection/constants.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/createArtikel/createArtikel.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/WarenkorbResource.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/atscript/src/di/type_literal.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Kunde.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/src/core/expressions/compiler.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/modules/angular2/src/change_detection/constants.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/src/core/expressions/compiler.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/tools/broccoli/angular_builder.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/ts/rx.backpressure-tests.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/modules/angular2/src/di/type_literal.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Adresse.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/ts/rx.async-tests.js" />
         <item url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/readTypeScriptModules/ignoreExportsMatching.js" />
-        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Adresse.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/Artikel.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/artikelController.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/ArtikelResource.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/app/app.js" />
+        <item url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/createArtikel/createArtikel.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -34,6 +36,8 @@
       <root url="file://$PROJECT_DIR$/Yael/shop/src/index.js.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/AdresseResource.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/AdresseResource.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/warenkorbService.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/warenkorbService.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/BestellpositionResource.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/Bestellposition.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/BestellResource.js" />
@@ -42,18 +46,20 @@
       <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/importedSrc.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/bestellverwaltung/Bestellung.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/atscript/src/change_detection/constants.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/WarenkorbResource.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/readTypeScriptModules/orderingOfMembers.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/warenkorb/WarenkorbResource.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/atscript/src/di/type_literal.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Kunde.js" />
-      <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/modules/angular2/src/change_detection/constants.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/src/core/expressions/compiler.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/modules/angular2/src/change_detection/constants.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/ts/rx.backpressure-tests.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/tools/broccoli/angular_builder.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/modules/angular2/src/di/type_literal.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/index.js" />
-      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Adresse.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/bower_components/angular-es6/docs/dgeni-package/mocks/readTypeScriptModules/ignoreExportsMatching.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/node_modules/angular2/node_modules/rx/ts/rx.async-tests.js" />
+      <root url="file://$PROJECT_DIR$/Yael/shop/src/components/kundenverwaltung/Adresse.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/Artikel.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/ArtikelResource.js" />
       <root url="file://$PROJECT_DIR$/Yael/shop/src/components/artikelverwaltung/artikelController.js" />
