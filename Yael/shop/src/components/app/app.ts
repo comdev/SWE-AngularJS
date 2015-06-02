@@ -11,7 +11,7 @@ import {RouteConfig} from 'angular2/router';
     selector:'app'
 })
 @View({
-    template:`<router-outlet></router-outlet>`
+    template:`<router-outlet></router-outlet>`,
     directives:[RouterOutlet]
 })
 
