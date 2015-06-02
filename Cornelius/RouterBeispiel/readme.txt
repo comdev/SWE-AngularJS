@@ -1,0 +1,3 @@
+- typings fehlen, daher findet der tsc die module nicht (ist jedoch zu vernachlässigen)
+-> Ihr könnt sie gerne eintragen, ändert nichts
+- Zum Starten http-server, bzw. vorher tsc rufen
