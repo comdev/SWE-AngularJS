@@ -20,7 +20,7 @@ var webserver = require('gulp-webserver');
 gulp.task('webserver', function() {
   gulp.src('src')
     .pipe(webserver({
-      open: true
+      open: false
     }));
 });
 
@@ -91,19 +91,19 @@ gulp.task('compress', function() {
 });
 
 gulp.task('typescript', function(){
-  gulp.src(['*.ts'])
+  gulp.src(['src/*.ts','src/components/**/*.ts','src/components/**/**/*.ts'])
       .pipe(typescript({
         target: 'ES5',
         outDir: 'build',
         emitError: true,
         sourcemap: false
       }))
-      .pipe(gulp.dest("."));
+      .pipe(gulp.dest("src"));
 });
 
 
 //default gulp task -  run any number of dependent sub-tasks - only if changes are made
-gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'typescript', 'webserver', typescript], function() {
+gulp.task('default', ['imagemin', 'htmlpage', 'scripts', 'styles', 'typescript', 'webserver'], function() {
   // watch for HTML changes
   gulp.watch('./src/*.html', function() {
     gulp.run('htmlpage');

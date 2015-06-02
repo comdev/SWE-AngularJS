@@ -6,28 +6,26 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-/**
- * Created by yaelwidmann on 20.05.15.
- */
-///<reference path="../../typings/angular2/angular2.d.ts"/>
+if (typeof __metadata !== "function") __metadata = function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+path;
+"typings/angular2/angular2.d.ts" >
+;
 var angular2_1 = require('angular2/angular2');
-var home_1 = require('../home/home');
-var login_1 = require('../login/login');
-var App = (function () {
-    function App(router) {
-        router.config('/home', home_1.Home)
-            .then(function () { return router.config('/login', login_1.Login); })
-            .then(function () { return router.navigate('/home'); });
+var MyAppComponent = (function () {
+    function MyAppComponent() {
+        this.name = 'Alice';
     }
-    App = __decorate([
+    MyAppComponent = __decorate([
         angular2_1.Component({
-            selector: 'app'
+            selector: 'my-app' // Defines the <my-app></my-app> tag
         }),
         angular2_1.View({
-            template: "<router-outlet></router-outlet>",
-            directives: [RouterOutlet]
-        })
-    ], App);
-    return App;
+            template: '<h1>Hello {{ name }}</h1>' // Defines the inline template for the component
+        }), 
+        __metadata('design:paramtypes', [])
+    ], MyAppComponent);
+    return MyAppComponent;
 })();
-exports.App = App;
+angular2_1.bootstrap(MyAppComponent);

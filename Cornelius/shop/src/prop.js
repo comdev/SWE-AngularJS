@@ -6,38 +6,28 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-<<<<<<< HEAD
 if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-=======
->>>>>>> 10b75b378ee3f38db38dbdaad07e1cdd53b1b8c2
-/**
- * Created by yaelwidmann on 21.05.15.
- */
+path;
+"typings/angular2/angular2.d.ts" >
+;
 var angular2_1 = require('angular2/angular2');
-var artikelController = (function () {
-    function artikelController() {
-        this.neuerArtikel = false;
+var DisplayComponent = (function () {
+    function DisplayComponent() {
+        this.myName = "Alice";
+        this.names = ["Aarav", "Mart�n", "Shannon", "Ariana", "Kai"];
     }
-    artikelController.prototype.onClickCreateArticle = function () {
-        this.neuerArtikel = true;
-    };
-    artikelController = __decorate([
+    DisplayComponent = __decorate([
         angular2_1.Component({
-            selector: 'artikel-verwaltung'
+            selector: 'display'
         }),
         angular2_1.View({
-            templateUrl: 'components/artikelverwaltung/artikelverwaltung.html',
-<<<<<<< HEAD
-            directives: []
+            template: "<p>My name: {{ myName }}</p>\n          <p>Friends:</p>\n          <ul>\n             <li *for=\"#name of names\">\n                {{ name }}\n             </li>\n          </ul>",
+            directives: [angular2_1.For]
         }), 
         __metadata('design:paramtypes', [])
-=======
-            directives: [angular2_1.For]
-        })
->>>>>>> 10b75b378ee3f38db38dbdaad07e1cdd53b1b8c2
-    ], artikelController);
-    return artikelController;
+    ], DisplayComponent);
+    return DisplayComponent;
 })();
-angular2_1.bootstrap(artikelController);
+angular2_1.bootstrap(DisplayComponent);

@@ -6,28 +6,27 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-/**
- * Created by yaelwidmann on 20.05.15.
- */
-///<reference path="../../typings/angular2/angular2.d.ts"/>
 var angular2_1 = require('angular2/angular2');
-var home_1 = require('../home/home');
-var login_1 = require('../login/login');
+var router_1 = require('angular2/router');
+var home_1 = require('./home');
+var about_1 = require('./about');
 var App = (function () {
-    function App(router) {
-        router.config('/home', home_1.Home)
-            .then(function () { return router.config('/login', login_1.Login); })
-            .then(function () { return router.navigate('/home'); });
+    function App() {
     }
     App = __decorate([
         angular2_1.Component({
             selector: 'app'
         }),
+        router_1.RouteConfig([
+            { path: '/home', component: home_1.Home, as: 'home' },
+            { path: '/about', component: about_1.About, as: 'about' }
+        ]),
         angular2_1.View({
-            template: "<router-outlet></router-outlet>",
-            directives: [RouterOutlet]
+            template: "\n    <h1>TEST</h1><br>\n    <a router-link=\"home\">Home</a>\n    <a router-link=\"about\">About</a><br>\n    <router-outlet></router-outlet>\n    ",
+            directives: [router_1.RouterOutlet, router_1.RouterLink]
         })
     ], App);
     return App;
 })();
 exports.App = App;
+angular2_1.bootstrap(App, [router_1.routerInjectables]);
