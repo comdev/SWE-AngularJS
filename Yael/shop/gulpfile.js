@@ -20,7 +20,7 @@ var webserver = require('gulp-webserver');
 gulp.task('webserver', function() {
   gulp.src('src')
     .pipe(webserver({
-      open: true
+      open: false
     }));
 });
 
@@ -91,14 +91,14 @@ gulp.task('compress', function() {
 });
 
 gulp.task('typescript', function(){
-  gulp.src(['src/**/*.ts'])
+  gulp.src(['src/*.ts','src/components/**/*.ts','src/components/**/**/*.ts'])
       .pipe(typescript({
         target: 'ES5',
         outDir: 'build',
         emitError: true,
         sourcemap: false
       }))
-      .pipe(gulp.dest("."));
+      .pipe(gulp.dest("src"));
 });
 
 
