@@ -15,20 +15,25 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var ArtikelResource_1 = require('../ArtikelResource');
+var WarenkorbResource_1 = require('../warenkorb/WarenkorbResource');
 var ArtikelComponent = (function () {
-    function ArtikelComponent(res) {
-        this.artikelArray = res.getAllArtikel();
+    function ArtikelComponent(ares, wres) {
+        this.artikelArray = ares.getAllArtikel();
+        this.wres = wres;
     }
+    ArtikelComponent.prototype.onClickKaufen = function (artikel) {
+        this.wres.addArtikel(artikel);
+    };
     ArtikelComponent = __decorate([
         angular2_1.Component({
             selector: 'listArtikel',
-            injectables: [ArtikelResource_1.ArtikelResource]
+            injectables: [ArtikelResource_1.ArtikelResource, WarenkorbResource_1.WarenkorbResource]
         }),
         angular2_1.View({
             templateUrl: 'components/artikelverwaltung/listArtikel/listArtikel.html',
             directives: [angular2_1.For]
         }), 
-        __metadata('design:paramtypes', [ArtikelResource_1.ArtikelResource])
+        __metadata('design:paramtypes', [ArtikelResource_1.ArtikelResource, WarenkorbResource_1.WarenkorbResource])
     ], ArtikelComponent);
     return ArtikelComponent;
 })();

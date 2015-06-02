@@ -20,10 +20,13 @@ export class KundeResource{
         return this.kunden;
     }
     getKundeById(id:number){
-        for(let kunde in this.kunden){
-            if(kunde.id === 1){
-                return " Herbert";
+        for(let kunde:Kunde in this.kunden){
+            if(this.kunden.hasOwnProperty(kunde)){
+                if(kunde.id === 1){
+                    return " Herbert";
+                }
             }
+
         }
         return " Kunde mit der Id:"+id+" gibt es nicht";
 

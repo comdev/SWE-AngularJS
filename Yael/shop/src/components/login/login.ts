@@ -8,10 +8,10 @@ import{Kunde} from '../kundenverwaltung/Kunde';
 
 @Component({
     selector:'login',
-    injectables:[KundeResource, Kunde]
+    injectables:[KundeResource]
 })
 @View({
-    templateUrl:'components/login/login'
+    templateUrl:'components/login/login.html'
 })
 class loginComponent{
     s:string;

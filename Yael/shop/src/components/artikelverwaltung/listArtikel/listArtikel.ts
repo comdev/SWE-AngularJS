@@ -5,10 +5,12 @@
 
 import{Component,bootstrap,View, For} from 'angular2/angular2';
 import{ArtikelResource} from '../ArtikelResource';
+import{WarenkorbResource} from '../warenkorb/WarenkorbResource';
+
 import{Artikel} from '../Artikel';
 @Component({
     selector:'listArtikel',
-    injectables: [ArtikelResource]
+    injectables: [ArtikelResource, WarenkorbResource]
 })
 @View({
     templateUrl:'components/artikelverwaltung/listArtikel/listArtikel.html',
@@ -16,12 +18,15 @@ import{Artikel} from '../Artikel';
 })
 export class ArtikelComponent{
     artikelArray:Array<Artikel>;
+    wres:WarenkorbResource;
 
-    constructor(res: ArtikelResource){
-        this.artikelArray= res.getAllArtikel();
-
+    constructor(ares: ArtikelResource, wres:WarenkorbResource){
+        this.artikelArray= ares.getAllArtikel();
+        this.wres=wres;
     }
-
+    onClickKaufen(artikel:Artikel){
+        this.wres.addArtikel(artikel);
+    }
 
 }
 bootstrap(ArtikelComponent);

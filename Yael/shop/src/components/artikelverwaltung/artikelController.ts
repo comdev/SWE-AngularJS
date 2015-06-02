@@ -9,7 +9,8 @@ import{Artikel} from './Artikel';
 })
 @View({
     templateUrl:'components/artikelverwaltung/artikelverwaltung.html',
-    directives:[For]
+ directives:[]
+  //  directives:[For]
 })
 class artikelController{
     neuerArtikel:boolean;

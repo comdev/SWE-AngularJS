@@ -16,8 +16,10 @@ var KundeResource = (function () {
     };
     KundeResource.prototype.getKundeById = function (id) {
         for (var kunde in this.kunden) {
-            if (kunde.id === 1) {
-                return " Herbert";
+            if (this.kunden.hasOwnProperty(kunde)) {
+                if (kunde.id === 1) {
+                    return " Herbert";
+                }
             }
         }
         return " Kunde mit der Id:" + id + " gibt es nicht";

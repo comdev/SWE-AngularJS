@@ -15,7 +15,6 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 ///<reference path="../../typings/angular2/angular2.d.ts"/>
 var angular2_1 = require('angular2/angular2');
 var KundeResource_1 = require('../kundenverwaltung/KundeResource');
-var Kunde_1 = require('../kundenverwaltung/Kunde');
 var loginComponent = (function () {
     function loginComponent(kundeRes) {
         this.kundeRes = kundeRes;
@@ -30,10 +29,10 @@ var loginComponent = (function () {
     loginComponent = __decorate([
         angular2_1.Component({
             selector: 'login',
-            injectables: [KundeResource_1.KundeResource, Kunde_1.Kunde]
+            injectables: [KundeResource_1.KundeResource]
         }),
         angular2_1.View({
-            templateUrl: 'components/login/login'
+            templateUrl: 'components/login/login.html'
         }), 
         __metadata('design:paramtypes', [KundeResource_1.KundeResource])
     ], loginComponent);

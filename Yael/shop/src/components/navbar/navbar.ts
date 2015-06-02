@@ -7,11 +7,11 @@ import{ArtikelComponent} from '../artikelverwaltung/listArtikel/listArtikel';
 @View({
     templateUrl:'components/navbar/navbar.html'
 })
-/*@RouteConfig({
-    path:'/listArtikel',
-    component:ArtikelComponent,
-    alias: 'listArtikel'
-})*/
+/**@RouteConfig({
+    path:'/components/artikelverwaltung/artikelverwaltung',
+    component: artikelController,
+    alias: 'Artikel'
+})**/
 class navComponent {
     name: string;
 

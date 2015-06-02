@@ -1,33 +1,17 @@
 /**
  * Created by yaelwidmann on 20.05.15.
  */
-import{Component,bootstrap,View, For} from 'angular2/angular2';
-
-import{Artikel} from './Artikel';
+import{Artikel as Artikel} from './Artikel';
 
 export class ArtikelResource{
     artikel: Array<Artikel>;
 
     constructor(){
 
-    let tasche= new Artikel(1,"Tasche",1,50,true);
-    //tasche.id = 1;
-    //tasche.bezeichnung = "Tasche";
-    //tasche.version = 1;
-    //tasche.preis = 50;
-
-
+        let tasche= new Artikel(1,"Tasche",1,50,true);
         let rucksack= new Artikel(2,"Rucksack",1,50,true);
-        //rucksack.id = 1;
-        //rucksack.bezeichnung = "Rucksack";
-        //rucksack.version = 1;
-        //rucksack.preis = 50;
-
         let geldbeutel= new Artikel(3,"Geldbeutel",1,50,true);
-        //geldbeutel.id = 1;
-        //geldbeutel.bezeichnung = "Geldbeutel";
-        //geldbeutel.version = 1;
-        //geldbeutel.preis = 50;
+
 
         this.artikel = new Array<Artikel>();
 
@@ -64,4 +48,3 @@ export class ArtikelResource{
     }
 }
 
-bootstrap(ArtikelResource);
