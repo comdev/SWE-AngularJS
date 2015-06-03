@@ -6,12 +6,6 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-<<<<<<< HEAD
-if (typeof __metadata !== "function") __metadata = function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-=======
->>>>>>> 10b75b378ee3f38db38dbdaad07e1cdd53b1b8c2
 /**
  * Created by yaelwidmann on 21.05.15.
  */
