@@ -78,7 +78,7 @@ export class Warenkorb {
        let warenkorb = [new Artikel('Tisch',10),new Artikel('Tisch',10), new Artikel('Stuhl', 8),new Artikel('Stuhl', 8)];
         return warenkorb;
     }
-    notIn(warenkorb:Array<Artikel>,artikel:Artikel){
+    notIn(warenkorb:Array<Artikel>, artikel:Artikel){
         for(let i = 0; i<warenkorb.length;i++){
             if(warenkorb[i].name === artikel.name){
                 return i;

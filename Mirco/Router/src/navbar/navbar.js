@@ -19,7 +19,7 @@ var Navbar = (function () {
         }),
         router_1.RouteConfig([
             { path: '/warenkorb', component: warenkorb_1.Warenkorb, as: 'warenkorb' },
-            { path: '/artikel', component: listArtikel_1.ListArtikel, as: 'artikel' }
+            { path: '/artikel', component: listArtikel_1.ListArtikel, as: 'artikel' },
         ]),
         angular2_1.View({
             templateUrl: 'src/navbar/navbar.html',

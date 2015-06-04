@@ -19,7 +19,7 @@ var ListArtikel = (function () {
         artikel.push(rucksack);
         artikel.push(geldbeutel);
         this.liste = artikel;
-        this.warenkorb = new warenkorb_1.Warenkorb;
+        this.warenkorb = new warenkorb_1.Warenkorb();
     }
     ListArtikel.prototype.addArtikel = function (artikel) {
         this.liste.push(artikel);

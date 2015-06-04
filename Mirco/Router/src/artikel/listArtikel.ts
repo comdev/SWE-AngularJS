@@ -30,7 +30,7 @@ export class ListArtikel {
         
         this.liste = artikel;
 
-		this.warenkorb = new Warenkorb;
+		this.warenkorb = new Warenkorb();
 	}
 
 	addArtikel(artikel: Artikel){
