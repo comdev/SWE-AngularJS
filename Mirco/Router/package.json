@@ -1,11 +1,8 @@
 {
-  "name": "RouterBeispiel",
+  "name": "Webshop",
   "version": "1.0.0",
-  "description": "Beispiel ng2 Router",
+  "description": "SWE Webshop",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-tsc": "^0.9.5",
