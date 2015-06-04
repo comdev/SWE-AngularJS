@@ -9,7 +9,6 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 var angular2_1 = require('angular2/angular2');
 var warenkorb_1 = require('../warenkorb/warenkorb');
 var artikel_1 = require('./artikel');
-//import{ArtikelResource} from './artikelResource';
 var ListArtikel = (function () {
     function ListArtikel() {
         var tasche = new artikel_1.Artikel("Tasche", 1);

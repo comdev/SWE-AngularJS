@@ -1,8 +1,8 @@
 <h1>Liste von Artikel</h1>
 <ul>
 	<li *for="#art of artikel">
-		{{art.name}}<br>
-		{{art.preis}}<br>
+		Name: {{art.name}}<br>
+		Preis: {{art.preis}}<br>
 		<button (click)="addWarenkorb(art.value)">Hinzufügen!</button>
 	</li>
 </ul>
