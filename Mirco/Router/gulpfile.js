@@ -24,11 +24,9 @@ gulp.task('typescript', function(){
 gulp.task('webserver', function() {
   gulp.src('.')
     .pipe(webserver({
-      open: true
+      open: false
     }));
 });
-
-gulp.task('default', ['typescript','webserver']);
 
 // JSHint, a tool that helps to detect errors and potential
 // problems in your JavaScript code.
@@ -49,3 +47,5 @@ gulp.task('imagemin', function() {
       .pipe(imagemin())
       .pipe(gulp.dest(imgDst));
 });
+
+gulp.task('default', ['typescript','webserver']);
