@@ -24,6 +24,9 @@ var ListArtikel = (function () {
     ListArtikel.prototype.addArtikel = function (artikel) {
         this.liste.push(artikel);
     };
+    ListArtikel.prototype.add = function (name, preis) {
+        this.liste.push(new artikel_1.Artikel(name, preis));
+    };
     /**  getAllArtikel(){
           return this.liste.getAllArtikel();
       }**/

@@ -21,6 +21,7 @@ var ArtikelComponent = (function () {
         this.artikelArray = ares.getAllArtikel();
         this.wres = wres;
     }
+    ArtikelComponent.parameters = [[]]
     ArtikelComponent.prototype.onClickKaufen = function (artikel) {
         this.wres.addArtikel(artikel);
     };

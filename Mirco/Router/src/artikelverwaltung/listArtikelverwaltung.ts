@@ -1,18 +1,18 @@
 import {View, Component, For} from 'angular2/angular2';
 
 import{Warenkorb} from '../warenkorb/warenkorb';
-import{Artikel} from './artikel';
-import{ArtikelResource} from './artikelResource';
+import{Artikel} from '../artikel/artikel';
+import{ArtikelResource} from '../artikel/artikelResource';
 
 @Component({
     selector: 'artikelListe',
 })
 @View({
-    templateUrl: 'src/artikel/listArtikel.html',
+    templateUrl: 'src/artikelverwaltung/listArtikelverwaltung.html',
 	directives: [For]
 })
 
-export class ListArtikel {
+export class ListArtikelverwaltung {
 	liste: Array<Artikel>;
 	warenkorb: Warenkorb;
 	constructor(){
@@ -30,15 +30,11 @@ export class ListArtikel {
         
         this.liste = artikel;
 
-		this.warenkorb = new Warenkorb();
+		this.warenkorb = new Warenkorb;
 	}
 
 	addArtikel(artikel: Artikel){
         this.liste.push(artikel);
-    }
-    
-    add(name: string, preis: number){
-        this.liste.push(new Artikel(name, preis));
     }
 
   /**  getAllArtikel(){
