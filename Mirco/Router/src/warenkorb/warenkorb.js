@@ -7,9 +7,10 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
     }
 };
 var angular2_1 = require('angular2/angular2');
+var artikel_1 = require('../artikel/artikel');
 var Warenkorb = (function () {
     function Warenkorb() {
-        this.warenkorb = [new Artikel('Tisch', 10)];
+        this.warenkorb = [new artikel_1.Artikel('Tisch', 10)];
     }
     Warenkorb.prototype.add = function (artikel) {
         this.warenkorb.push();
@@ -26,11 +27,3 @@ var Warenkorb = (function () {
     return Warenkorb;
 })();
 exports.Warenkorb = Warenkorb;
-var Artikel = (function () {
-    function Artikel(name, preis) {
-        this.name = name;
-        this.preis = preis;
-    }
-    return Artikel;
-})();
-exports.Artikel = Artikel;
