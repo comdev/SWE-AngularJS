@@ -48,4 +48,9 @@ export class ListArtikel {
 	addWarenkorb(artikel: Artikel){
 		this.warenkorb.add(artikel);
 	}
+    
+    //in den Warenkorb hinzufügen
+    addW(name: string, preis: number){
+        this.warenkorb.add2(name, preis);
+    }
 }
