@@ -1,7 +1,31 @@
 <h1>Warenkorb</h1>
+<div class="col-sm-8 col-md-8 col-lg-8">
+<h3>Artikel</h3>
 <ul class="list-group">
 	<li class="list-group-item" *for="#art of warenkorb">
-		{{art.name}}<br>
-		{{art.preis}}<br>
+		<div>
+			{{art.name}}
+		</div>
+		<div class="btn-group">
+			<button (click)="add(art)">Hinzufügen</button>
+			<button (click)="delete(art)">Löschen</button>
+		</div>
 	</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4">
+	<h3>Anzahl</h3>
+<ul class="list-group">
+	<li class="list-group-item" *for="#anz of anzahl">
+			{{anz}}
+	</li>
+</ul>
+</div>
+<ul class="list-group">
+	<div class="col-sm-8 col-md-8 col-lg-8">
+		<strong>Gesamtpreis: </strong>
+	</div>
+	<div class="col-sm-4 col-md-4 col-lg-4">
+		<strong>{{gesamtPreis}}</strong>
+	</div>
 </ul>
