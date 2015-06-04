@@ -6,9 +6,6 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-if (typeof __metadata !== "function") __metadata = function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 /**
  * Created by yaelwidmann on 16.05.15.
  */
@@ -35,8 +32,7 @@ var home = (function () {
         angular2_1.View({
             url: "components/home/home.html",
             directives: [angular2_1.If]
-        }), 
-        __metadata('design:paramtypes', [(typeof Router !== 'undefined' && Router) || Object])
+        })
     ], home);
     return home;
 })();
