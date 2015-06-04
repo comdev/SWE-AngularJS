@@ -24,6 +24,10 @@ var Warenkorb = (function () {
         }
         this.gesamtPreis = this.getGesamtPreis();
     };
+    //Versuch ohne Artikel sondern mit dem Attributen
+    Warenkorb.prototype.add2 = function (name, preis) {
+        this.add(new artikel_1.Artikel(name, preis));
+    };
     Warenkorb.prototype.delete = function (artikel) {
         var position = this.notIn(this.warenkorb, artikel);
         if (position !== -1) {

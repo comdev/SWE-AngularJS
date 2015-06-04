@@ -8,9 +8,9 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 };
 var angular2_1 = require('angular2/angular2');
 var warenkorb_1 = require('../warenkorb/warenkorb');
-var artikel_1 = require('./artikel');
-var ListArtikel = (function () {
-    function ListArtikel() {
+var artikel_1 = require('../artikel/artikel');
+var ListArtikelverwaltung = (function () {
+    function ListArtikelverwaltung() {
         var tasche = new artikel_1.Artikel("Tasche", 1);
         var rucksack = new artikel_1.Artikel("Rucksack", 2);
         var geldbeutel = new artikel_1.Artikel("Geldbeutel", 3);
@@ -19,33 +19,26 @@ var ListArtikel = (function () {
         artikel.push(rucksack);
         artikel.push(geldbeutel);
         this.liste = artikel;
-        this.warenkorb = new warenkorb_1.Warenkorb();
+        this.warenkorb = new warenkorb_1.Warenkorb;
     }
-    ListArtikel.prototype.addArtikel = function (artikel) {
+    ListArtikelverwaltung.prototype.addArtikel = function (artikel) {
         this.liste.push(artikel);
-    };
-    ListArtikel.prototype.add = function (name, preis) {
-        this.liste.push(new artikel_1.Artikel(name, preis));
     };
     /**  getAllArtikel(){
           return this.liste.getAllArtikel();
       }**/
-    ListArtikel.prototype.addWarenkorb = function (artikel) {
+    ListArtikelverwaltung.prototype.addWarenkorb = function (artikel) {
         this.warenkorb.add(artikel);
     };
-    //in den Warenkorb hinzufügen
-    ListArtikel.prototype.addW = function (name, preis) {
-        this.warenkorb.add2(name, preis);
-    };
-    ListArtikel = __decorate([
+    ListArtikelverwaltung = __decorate([
         angular2_1.Component({
             selector: 'artikelListe',
         }),
         angular2_1.View({
-            templateUrl: 'src/artikel/listArtikel.html',
+            templateUrl: 'src/artikelverwaltung/listArtikelverwaltung.html',
             directives: [angular2_1.For]
         })
-    ], ListArtikel);
-    return ListArtikel;
+    ], ListArtikelverwaltung);
+    return ListArtikelverwaltung;
 })();
-exports.ListArtikel = ListArtikel;
+exports.ListArtikelverwaltung = ListArtikelverwaltung;
