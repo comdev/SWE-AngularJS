@@ -8,7 +8,6 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var home_1 = require('../home');
 var listArtikel_1 = require('../artikel/listArtikel');
 var warenkorb_1 = require('../warenkorb/warenkorb');
 var Navbar = (function () {
@@ -19,7 +18,6 @@ var Navbar = (function () {
             selector: 'navbar'
         }),
         router_1.RouteConfig([
-            { path: '/home', component: home_1.Home, as: 'home' },
             { path: '/warenkorb', component: warenkorb_1.Warenkorb, as: 'warenkorb' },
             { path: '/artikel', component: listArtikel_1.ListArtikel, as: 'artikel' }
         ]),

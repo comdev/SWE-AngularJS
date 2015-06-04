@@ -8,9 +8,10 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 };
 var angular2_1 = require('angular2/angular2');
 var warenkorb_1 = require('../warenkorb/warenkorb');
+var artikel_1 = require('./artikel');
 var ListArtikel = (function () {
     function ListArtikel() {
-        this.artikel = [new Artikel('Tisch', 10), new Artikel('Stuhl', 5)];
+        this.artikel = [new artikel_1.Artikel('Tisch', 10), new artikel_1.Artikel('Stuhl', 5)];
         this.warenkorb = new warenkorb_1.Warenkorb();
     }
     ListArtikel.prototype.addWarenkorb = function (artikel) {
@@ -28,11 +29,3 @@ var ListArtikel = (function () {
     return ListArtikel;
 })();
 exports.ListArtikel = ListArtikel;
-var Artikel = (function () {
-    function Artikel(name, preis) {
-        this.name = name;
-        this.preis = preis;
-    }
-    return Artikel;
-})();
-exports.Artikel = Artikel;

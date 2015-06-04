@@ -1,6 +1,7 @@
 import {View, Component, For} from 'angular2/angular2';
 
 import{Warenkorb} from '../warenkorb/warenkorb';
+import{Artikel} from './artikel';
 
 @Component({
     selector: 'artikelListe',
@@ -20,21 +21,5 @@ export class ListArtikel {
 	
 	addWarenkorb(artikel: Artikel){
 		this.warenkorb.add(artikel);
-	}
-}
-
-
-interface IArtikel{
-	name: string;
-	preis: number;
-}
-
-export class Artikel implements IArtikel{
-	name: string;
-	preis: number;
-	
-	constructor(name: string, preis: number){
-		this.name = name;
-		this.preis = preis;
 	}
 }
