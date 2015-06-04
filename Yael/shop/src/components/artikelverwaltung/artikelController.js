@@ -23,14 +23,8 @@ var artikelController = (function () {
         }),
         angular2_1.View({
             templateUrl: 'components/artikelverwaltung/artikelverwaltung.html',
-<<<<<<< HEAD
             directives: []
-        }), 
-        __metadata('design:paramtypes', [])
-=======
-            directives: [angular2_1.For]
         })
->>>>>>> 10b75b378ee3f38db38dbdaad07e1cdd53b1b8c2
     ], artikelController);
     return artikelController;
 })();
