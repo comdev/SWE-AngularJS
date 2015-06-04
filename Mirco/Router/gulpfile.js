@@ -5,7 +5,7 @@ var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
  
 gulp.task('typescript', function(){
-  gulp.src(['src/*.ts', 'src/**/*.ts'])
+  gulp.src(['src/**/*.ts'])
     .pipe(typescript({
 		target:'ES5',
     outDir: 'build',
