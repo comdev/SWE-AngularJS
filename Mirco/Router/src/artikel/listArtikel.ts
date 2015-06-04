@@ -2,9 +2,11 @@ import {View, Component, For} from 'angular2/angular2';
 
 import{Warenkorb} from '../warenkorb/warenkorb';
 import{Artikel} from './artikel';
+import{ArtikelResource} from './artikelResource';
 
 @Component({
-    selector: 'artikelListe'
+    selector: 'artikelListe',
+    injectables: [ArtikelResource]
 })
 @View({
     templateUrl: 'src/artikel/listArtikel.html', 
@@ -12,11 +14,11 @@ import{Artikel} from './artikel';
 })
 
 export class ListArtikel {
-	artikel: Array<Artikel>;
+	liste: ArtikelResource;
 	warenkorb: Warenkorb
-	constructor(){
+	constructor(liste: ArtikelResource){
 		
-        let tasche= new Artikel("Tasche",1);
+       /* let tasche= new Artikel("Tasche",1);
         let rucksack= new Artikel("Rucksack",2);
         let geldbeutel= new Artikel("Geldbeutel",3);
 
@@ -25,17 +27,19 @@ export class ListArtikel {
 
         this.artikel.push(tasche);
         this.artikel.push(rucksack);
-        this.artikel.push(geldbeutel);
+        this.artikel.push(geldbeutel);*/
+        
+        this.liste = liste;
 
 		this.warenkorb = new Warenkorb();
 	}
 	
 	addArtikel(artikel: Artikel){
-        this.artikel.push(artikel)
+        this.liste.addArtikel(artikel);
     }
 
     getAllArtikel(){
-        return this.artikel;
+        return this.liste.getAllArtikel();
     }
 	
 	addWarenkorb(artikel: Artikel){
