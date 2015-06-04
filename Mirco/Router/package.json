@@ -8,7 +8,7 @@
     "gulp-changed": "^1.2.1",
     "gulp-imagemin": "^2.2.1",
     "gulp-jshint": "^1.11.0",
-    "gulp-tsc": "^0.9.5",
+    "gulp-tsc": "^0.10.0",
     "gulp-webserver": "^0.9.1"
   }
 }
