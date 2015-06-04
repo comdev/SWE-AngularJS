@@ -1,19 +1,19 @@
 /**
  * Created by yaelwidmann on 20.05.15.
  */
-import{Artikel as Artikel} from './Artikel';
+import{Artikel} from './Artikel';
 
 export class ArtikelResource{
     artikel: Array<Artikel>;
 
     constructor(){
 
-        let tasche= new Artikel(1,"Tasche",1,50,true);
-        let rucksack= new Artikel(2,"Rucksack",1,50,true);
-        let geldbeutel= new Artikel(3,"Geldbeutel",1,50,true);
+        let tasche= new Artikel("Tasche",1);
+        let rucksack= new Artikel("Rucksack",1);
+        let geldbeutel= new Artikel("Geldbeutel",1);
 
 
-        this.artikel = new Array<Artikel>();
+        this.artikel = [];
 
         this.artikel.push(tasche);
         this.artikel.push(rucksack);
@@ -27,7 +27,7 @@ export class ArtikelResource{
     getAllArtikel(){
         return this.artikel;
     }
-    getArtikelById(id:number){
+    /*getArtikelById(id:number){
         for(var art in this.artikel){
             if(art.id.isEqual(id)){
                 return art;
@@ -45,6 +45,6 @@ export class ArtikelResource{
             }
         }
         return artikel;
-    }
+    }*/
 }
 
