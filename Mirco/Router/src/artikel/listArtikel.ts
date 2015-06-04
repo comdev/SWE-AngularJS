@@ -36,6 +36,10 @@ export class ListArtikel {
 	addArtikel(artikel: Artikel){
         this.liste.push(artikel);
     }
+    
+    add(name: string, preis: number){
+        this.liste.push(new Artikel(name, preis));
+    }
 
   /**  getAllArtikel(){
         return this.liste.getAllArtikel();
