@@ -18,7 +18,7 @@ gulp.task('typescript', function(){
 gulp.task('webserver', function() {
   gulp.src('.')
     .pipe(webserver({
-      open: false
+      open: true
     }));
 });
 
