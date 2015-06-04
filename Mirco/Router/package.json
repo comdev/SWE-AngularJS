@@ -6,10 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jan Huege",
-  "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-tsc": "^0.9.5"
+    "gulp-tsc": "^0.9.5",
+    "gulp-webserver": "^0.9.1"
   }
 }
