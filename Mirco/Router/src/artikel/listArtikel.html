@@ -1,6 +1,7 @@
 <h1>Liste von Artikel</h1>
-<ul>
-	<li *for="#art of artikel">
+
+<ul class="list-group">
+	<li *for="#art of artikel" href="#" class="list-group-item">
 		Name: {{art.name}}<br>
 		Preis: {{art.preis}}<br>
 		<button (click)="addWarenkorb(art.value)">Hinzufügen!</button>
