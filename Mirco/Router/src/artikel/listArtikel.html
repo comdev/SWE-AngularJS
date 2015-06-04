@@ -1,7 +1,7 @@
 <h1>Liste von Artikel</h1>
 
 <ul class="list-group">
-	<li href="#" class="list-group-item" *for="#art of liste">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addWarenkorb(art.value)" type="submit">Hinzufügen</button></li>
+	<li href="#" class="list-group-item" *for="#art of artikel">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addWarenkorb(art.value)" type="submit">Hinzufügen</button></li>
 </ul>
 
 Name<input #newname type="text"/>
