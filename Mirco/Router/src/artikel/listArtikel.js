@@ -8,30 +8,35 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 };
 var angular2_1 = require('angular2/angular2');
 var warenkorb_1 = require('../warenkorb/warenkorb');
-var artikel_1 = require('./artikel');
+var artikelResource_1 = require('./artikelResource');
 var ListArtikel = (function () {
-    function ListArtikel() {
-        var tasche = new artikel_1.Artikel("Tasche", 1);
-        var rucksack = new artikel_1.Artikel("Rucksack", 2);
-        var geldbeutel = new artikel_1.Artikel("Geldbeutel", 3);
-        this.artikel = [];
-        this.artikel.push(tasche);
-        this.artikel.push(rucksack);
-        this.artikel.push(geldbeutel);
+    function ListArtikel(liste) {
+        /* let tasche= new Artikel("Tasche",1);
+         let rucksack= new Artikel("Rucksack",2);
+         let geldbeutel= new Artikel("Geldbeutel",3);
+ 
+ 
+         this.artikel = [];
+ 
+         this.artikel.push(tasche);
+         this.artikel.push(rucksack);
+         this.artikel.push(geldbeutel);*/
+        this.liste = liste;
         this.warenkorb = new warenkorb_1.Warenkorb();
     }
     ListArtikel.prototype.addArtikel = function (artikel) {
-        this.artikel.push(artikel);
+        this.liste.addArtikel(artikel);
     };
     ListArtikel.prototype.getAllArtikel = function () {
-        return this.artikel;
+        return this.liste.getAllArtikel();
     };
     ListArtikel.prototype.addWarenkorb = function (artikel) {
         this.warenkorb.add(artikel);
     };
     ListArtikel = __decorate([
         angular2_1.Component({
-            selector: 'artikelListe'
+            selector: 'artikelListe',
+            injectables: [artikelResource_1.ArtikelResource]
         }),
         angular2_1.View({
             templateUrl: 'src/artikel/listArtikel.html',
