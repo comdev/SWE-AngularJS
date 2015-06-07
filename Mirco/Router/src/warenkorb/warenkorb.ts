@@ -28,6 +28,11 @@ export class Warenkorb {
         }
         this.gesamtPreis = this.getGesamtPreis();
 	}
+    //Versuch ohne Artikel sondern mit dem Attributen
+    add2(name:string, preis: number){
+        this.add(new Artikel(name, preis));
+    }
+    
     delete(artikel: Artikel){
         let position = this.notIn(this.warenkorb, artikel);
         if(position !== -1){

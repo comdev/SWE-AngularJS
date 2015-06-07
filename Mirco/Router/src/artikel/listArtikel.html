@@ -1,7 +1,13 @@
 <h1>Liste von Artikel</h1>
 
+<!-- Orginal
 <ul class="list-group">
 	<li href="#" class="list-group-item" *for="#art of liste">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addWarenkorb(art)" type="submit">Hinzufügen</button></li>
+</ul>
+-->
+
+<ul class="list-group">
+	<li href="#" class="list-group-item" *for="#art of liste">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addW(art.name,art.preis)" type="submit">Hinzufügen</button></li>
 </ul>
 
 Name<input #newname type="text"/>

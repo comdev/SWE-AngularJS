@@ -33,6 +33,10 @@ var ListArtikel = (function () {
     ListArtikel.prototype.addWarenkorb = function (artikel) {
         this.warenkorb.add(artikel);
     };
+    //in den Warenkorb hinzufügen
+    ListArtikel.prototype.addW = function (name, preis) {
+        this.warenkorb.add2(name, preis);
+    };
     ListArtikel = __decorate([
         angular2_1.Component({
             selector: 'artikelListe',
