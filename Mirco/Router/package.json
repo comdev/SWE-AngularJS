@@ -4,6 +4,7 @@
   "description": "SWE Webshop",
   "main": "index.html",
   "devDependencies": {
+    "angular-local-storage": "^0.2.2",
     "gulp": "^3.8.11",
     "gulp-changed": "^1.2.1",
     "gulp-imagemin": "^2.2.1",
