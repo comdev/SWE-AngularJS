@@ -1,17 +1,14 @@
 import {View, Component, bootstrap} from 'angular2/angular2';
 import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInjectables} from 'angular2/router';
-import {ListArtikelverwaltung} from '../artikelverwaltung/listArtikelverwaltung';
 import {ArtikelComponent} from '../artikel/artikelComponent';
-import {Warenkorb} from '../warenkorb/warenkorb';
+import {WarenkorbComponent} from '../warenkorb/warenkorbComponent';
 
 @Component({
     selector: 'navbar'
 })
 @RouteConfig([
-    { path: '/warenkorb', component: Warenkorb, as: 'warenkorb'},
-    { path: '/artikel', component: ArtikelComponent, as: 'artikel'},
-    { path: '/artikelverwaltung', component: ListArtikelverwaltung, as: 'artikelverwaltung'}
-
+    { path: '/warenkorb', component: WarenkorbComponent, as: 'warenkorb'},
+    { path: '/artikel', component: ArtikelComponent, as: 'artikel'}
 ])
 @View({
     templateUrl: 'src/navbar/navbar.html',

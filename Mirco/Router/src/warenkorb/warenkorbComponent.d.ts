@@ -1,14 +1,13 @@
+/// <reference path="../../angular2/angular2.d.ts" />
+/// <reference path="../../src/warenkorb/warenkorb.d.ts" />
+/// <reference path="../../src/warenkorb/warenkorbResource.d.ts" />
+/// <reference path="../../src/artikel/artikel.d.ts" />
+import { Warenkorb } from './warenkorb';
 import { Artikel } from '../artikel/artikel';
-export declare class Warenkorb {
-    warenkorb: Array<Artikel>;
-    gesamtPreis: number;
-    anzahl: Array<number>;
+export declare class WarenkorbComponent {
+    warenkorb: Array<Warenkorb>;
     constructor();
-    add(artikel: Artikel): void;
-    add2(name: string, preis: number): void;
-    delete(artikel: Artikel): void;
-    getGesamtPreis(): number;
-    getWarenkorb(): any[];
-    getWaren(): Artikel[];
-    notIn(warenkorb: Array<Artikel>, artikel: Artikel): number;
+    add(art: Artikel): void;
+    delete(art: Artikel): void;
+    gesamtpreis(): number;
 }

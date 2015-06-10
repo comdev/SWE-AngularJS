@@ -1,37 +1,42 @@
-/**
- * Created by yaelwidmann on 10.06.15.
- */
+/// <reference path="warenkorb.d.ts"/>
+/// <reference path="../artikel/artikel.d.ts"/>
+
 import {Artikel} from '../artikel/artikel';
 import {Warenkorb} from './warenkorb';
 
 
-let warenkorb: Array<Warenkorb> = [new Artikel('Tisch',10),new Artikel('Tisch',10), new Artikel('Stuhl', 8),new Artikel('Stuhl', 8)];
+var warenkorb: Array<Warenkorb> = [
+    new Warenkorb(new Artikel('Tisch',10),4), 
+    new Warenkorb(new Artikel('Sofa',10),3), 
+    new Warenkorb(new Artikel('Stuhl', 8),1)
+];
 
 export let WarenkorbResource: any = {
 
-    add(artikel: Artikel): void{
-        let position = this.notIn(artikel);
+    add(art: Artikel): void{
+        let position = this.notIn(art);
         if(position===-1){
-            warenkorb.push(artikel,1);
+            warenkorb.push(new Warenkorb(art,1));
         }
         else{
-            warenkorb[i].anzahl++;
+            warenkorb[position].anzahl++;
         }
     },
 
     delete(artikel: Artikel):void{
 
-    let position = this.notIn(artikel);
-    if (position !== -1){
-        let anzahl = warenkorb[position].anzahl;
-        if (anzahl !== 1){
-            warenkorb[position].anzahl--;
-        }else{
-            warenkorb.splice(position,1);
+        let position = this.notIn(artikel);
+        if (position !== -1){
+            let anzahl = warenkorb[position].anzahl;
+            if (anzahl !== 1){
+                warenkorb[position].anzahl--;
+            }
+            else{
+                warenkorb.splice(position,1);
+            }
         }
-    }
-},
-getGesamtPreis(): number{
+    },
+    getGesamtpreis(): number{
     let i = 0;
     let gespreis = 0;
     for (i;i<warenkorb.length; i++){

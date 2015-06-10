@@ -1,3 +1,7 @@
+/// <reference path="../../angular2/angular2.d.ts"/>
+/// <reference path="warenkorb.d.ts"/>
+/// <reference path="warenkorbResource.d.ts"/>
+/// <reference path="../artikel/artikel.d.ts"/>
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -7,96 +11,29 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
     }
 };
 var angular2_1 = require('angular2/angular2');
-var artikel_1 = require('../artikel/artikel');
-var Warenkorb = (function () {
-    function Warenkorb() {
-        this.warenkorb = this.getWarenkorb();
-        this.gesamtPreis = this.getGesamtPreis();
+var warenkorbResource_1 = require('./warenkorbResource');
+var WarenkorbComponent = (function () {
+    function WarenkorbComponent() {
+        this.warenkorb = warenkorbResource_1.WarenkorbResource.getWarenkorb();
     }
-    Warenkorb.prototype.add = function (artikel) {
-        var position = this.notIn(this.warenkorb, artikel);
-        if (position === -1) {
-            this.warenkorb.push(artikel);
-            this.anzahl.push(1);
-        }
-        else {
-            this.anzahl[position] = this.anzahl[position] + 1;
-        }
-        this.gesamtPreis = this.getGesamtPreis();
+    WarenkorbComponent.prototype.add = function (art) {
+        warenkorbResource_1.WarenkorbResource.add(art);
     };
-    //Versuch ohne Artikel sondern mit dem Attributen
-    Warenkorb.prototype.add2 = function (name, preis) {
-        this.add(new artikel_1.Artikel(name, preis));
+    WarenkorbComponent.prototype.delete = function (art) {
+        warenkorbResource_1.WarenkorbResource.delete(art);
     };
-    Warenkorb.prototype.delete = function (artikel) {
-        var position = this.notIn(this.warenkorb, artikel);
-        if (position !== -1) {
-            var anzahl = this.anzahl[position];
-            if (anzahl !== 1) {
-                this.anzahl[position] = this.anzahl[position] - 1;
-            }
-            else {
-                var neuerwarenkorb = [];
-                var neueanzahl = [];
-                for (var i = 0; i < this.warenkorb.length; i++) {
-                    if (this.warenkorb[i].name !== artikel.name) {
-                        neuerwarenkorb.push(this.warenkorb[i]);
-                        neueanzahl.push(this.anzahl[i]);
-                    }
-                }
-                this.warenkorb = neuerwarenkorb;
-                this.anzahl = neueanzahl;
-            }
-        }
-        this.gesamtPreis = this.getGesamtPreis();
+    WarenkorbComponent.prototype.gesamtpreis = function () {
+        return warenkorbResource_1.WarenkorbResource.getGesamtpreis();
     };
-    Warenkorb.prototype.getGesamtPreis = function () {
-        var i = 0;
-        var gespreis = 0;
-        for (i; i < this.warenkorb.length; i++) {
-            gespreis = gespreis + this.warenkorb[i].preis * this.anzahl[i];
-        }
-        return gespreis;
-    };
-    Warenkorb.prototype.getWarenkorb = function () {
-        var waren = this.getWaren();
-        var anzahl = [];
-        var warenkorb = [];
-        var i = 0;
-        for (i; i < waren.length; i++) {
-            var position = this.notIn(warenkorb, waren[i]);
-            if (position === -1) {
-                warenkorb.push(waren[i]);
-                anzahl.push(1);
-            }
-            else {
-                anzahl[position] = anzahl[position] + 1;
-            }
-        }
-        this.anzahl = anzahl;
-        return warenkorb;
-    };
-    Warenkorb.prototype.getWaren = function () {
-        var warenkorb = [new artikel_1.Artikel('Tisch', 10), new artikel_1.Artikel('Tisch', 10), new artikel_1.Artikel('Stuhl', 8), new artikel_1.Artikel('Stuhl', 8)];
-        return warenkorb;
-    };
-    Warenkorb.prototype.notIn = function (warenkorb, artikel) {
-        for (var i = 0; i < warenkorb.length; i++) {
-            if (warenkorb[i].name === artikel.name) {
-                return i;
-            }
-        }
-        return -1;
-    };
-    Warenkorb = __decorate([
+    WarenkorbComponent = __decorate([
         angular2_1.Component({
-            selector: 'warenkorb'
+            selector: 'warenkorbComponent'
         }),
         angular2_1.View({
-            templateUrl: 'src/warenkorb/warenkorb.html',
+            templateUrl: 'src/warenkorb/warenkorbComponent.html',
             directives: [angular2_1.For]
         })
-    ], Warenkorb);
-    return Warenkorb;
+    ], WarenkorbComponent);
+    return WarenkorbComponent;
 })();
-exports.Warenkorb = Warenkorb;
+exports.WarenkorbComponent = WarenkorbComponent;

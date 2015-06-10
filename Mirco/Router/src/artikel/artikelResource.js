@@ -1,6 +1,4 @@
-/**
- * Created by yaelwidmann on 20.05.15.
- */
+/// <reference path="artikel.d.ts"/>
 var Artikel_1 = require('./Artikel');
 var artikel = [
     new Artikel_1.Artikel("Tasche", 1),

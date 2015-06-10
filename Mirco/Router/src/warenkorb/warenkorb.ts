@@ -1,3 +1,5 @@
+/// <reference path="../artikel/artikel.d.ts"/>
+
 import {Artikel} from '../artikel/artikel';
 
 export class Warenkorb {

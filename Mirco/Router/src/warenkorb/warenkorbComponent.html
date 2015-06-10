@@ -9,16 +9,19 @@
 			<button (click)="add(ware.artikel)">Hinzufügen</button>
 			<button (click)="delete(ware.artikel)">Löschen</button>
 		</div>
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			{{ware.artikel.preis}} €
+		</div>
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			{{ware.anzahl}}
+		</div>
 	</li>
-	<div class="col-sm-4 col-md-4 col-lg-4">
-		{{ware.anzahl}}
-	</div>
 </ul>
 <ul class="list-group">
 	<div class="col-sm-8 col-md-8 col-lg-8">
 		<strong>Gesamtpreis: </strong>
 	</div>
 	<div class="col-sm-4 col-md-4 col-lg-4">
-		<strong>{{gesamtPreis}}</strong>
+		<strong>{{gesamtpreis()}}€</strong>
 	</div>
 </ul>

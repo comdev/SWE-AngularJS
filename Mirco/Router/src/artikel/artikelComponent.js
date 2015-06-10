@@ -1,7 +1,7 @@
 /// <reference path="../../angular2/angular2.d.ts"/>
 /// <reference path="artikelResource.d.ts"/>
 /// <reference path="artikel.d.ts"/>
-/// <reference path="artikelService.d.ts"/>
+/// <reference path="../warenkorb/warenkorbResource.d.ts"/>
 if (typeof __decorate !== "function") __decorate = function (decorators, target, key, desc) {
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
     switch (arguments.length) {
@@ -13,7 +13,7 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 var angular2_1 = require('angular2/angular2');
 var artikelResource_1 = require('./artikelResource');
 var artikel_1 = require('./artikel');
-//import{ArtikelService} from './artikelService';
+var warenkorbResource_1 = require('../warenkorb/warenkorbResource');
 var ArtikelComponent = (function () {
     function ArtikelComponent() {
         console.log("Kontruktor von ArtikelComponent aufgerufen");
@@ -22,6 +22,10 @@ var ArtikelComponent = (function () {
     ArtikelComponent.prototype.addArtikel = function (name, price) {
         console.log("AddArtikel wird aufgerufen");
         artikelResource_1.ArtikelResource.add(new artikel_1.Artikel(name, price));
+    };
+    ArtikelComponent.prototype.toWarenkorb = function (artikel) {
+        console.log("Add to Warenkorb");
+        warenkorbResource_1.WarenkorbResource.add(artikel);
     };
     ArtikelComponent = __decorate([
         angular2_1.Component({

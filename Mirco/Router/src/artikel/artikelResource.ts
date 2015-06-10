@@ -1,6 +1,5 @@
-/**
- * Created by yaelwidmann on 20.05.15.
- */
+/// <reference path="artikel.d.ts"/>
+
 import{Artikel} from './Artikel';
 
 var artikel: Array<Artikel> =[

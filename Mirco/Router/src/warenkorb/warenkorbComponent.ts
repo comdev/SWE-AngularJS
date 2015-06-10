@@ -1,3 +1,8 @@
+/// <reference path="../../angular2/angular2.d.ts"/>
+/// <reference path="warenkorb.d.ts"/>
+/// <reference path="warenkorbResource.d.ts"/>
+/// <reference path="../artikel/artikel.d.ts"/>
+
 import {View, Component, For} from 'angular2/angular2';
 import {Warenkorb} from './warenkorb';
 import {WarenkorbResource} from './warenkorbResource';
@@ -7,22 +12,23 @@ import {Artikel} from '../artikel/artikel';
     selector: 'warenkorbComponent'
 })
 @View({
-    templateUrl: 'src/warenkorb/warenkorb.html', 
+    templateUrl: 'src/warenkorb/warenkorbComponent.html', 
 	directives: [For]
 })
 
 export class WarenkorbComponent {
 	warenkorb: Array<Warenkorb>;
-    gesamtPreis: number;
  	constructor(){
 		this.warenkorb = WarenkorbResource.getWarenkorb();
-        this.gesamtPreis = WarenkorbResource.getGesamtPreis();
 	}
     add(art: Artikel){
         WarenkorbResource.add(art);
     }
     delete(art: Artikel){
         WarenkorbResource.delete(art);
+    }
+    gesamtpreis(): number{
+        return WarenkorbResource.getGesamtpreis();
     }
 }
 
