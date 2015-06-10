@@ -7,10 +7,10 @@
 -->
 
 <ul class="list-group">
-	<li href="#" class="list-group-item" *for="#art of liste">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addW(art.name,art.preis)" type="submit">Hinzufügen</button></li>
+	<li href="#" class="list-group-item" *for="#art of artikel">{{art.name}} | {{art.preis}} € <button class="btn btn-default" (click)="addArtikel(art)" type="submit">Hinzufügen</button></li>
 </ul>
 
 Name<input #newname type="text"/>
 Preis<input #newprice type="text"/>
 
-<button class="btn btn-default" (click)="add(newname.value, newprice.value)" type="submit">Hinzufügen</button>
+<button class="btn btn-default" (click)="addArtikel(newname.value, newprice.value)" type="submit">Hinzufügen</button>

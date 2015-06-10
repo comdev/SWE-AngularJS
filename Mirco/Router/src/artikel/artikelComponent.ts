@@ -1,3 +1,8 @@
+/// <reference path="../../angular2/angular2.d.ts"/>
+/// <reference path="artikelResource.d.ts"/>
+/// <reference path="artikel.d.ts"/>
+/// <reference path="artikelService.d.ts"/>
+
 import {View, Component, For} from 'angular2/angular2';
 
 import{ArtikelResource} from './artikelResource';
@@ -7,7 +12,7 @@ import{ArtikelService} from './artikelService';
     selector: 'artikelComponent'
 })
 @View({
-    templateUrl: 'src/artikel/listArtikel.html',
+    templateUrl: 'src/artikel/artikelComponent.html',
     directives: [For]
 })
 
@@ -22,7 +27,9 @@ export class ArtikelComponent{
 		this.artikel = this.artikelMock.getAllArtikel();
 	}
 	
-	public addArtikel (artikel: Artikel): void{
-		ArtikelService.add(artikel);
+	public addArtikel (name: string, price: number): void{
+		console.log("AddArtikel wird aufgerufen");
+		
+		ArtikelService.add(new Artikel(name, price));
 	}
 }

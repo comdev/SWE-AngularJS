@@ -1,8 +1,12 @@
+/// <reference path="../../angular2/angular2.d.ts" />
+/// <reference path="../../src/artikel/artikelResource.d.ts" />
+/// <reference path="../../src/artikel/artikel.d.ts" />
+/// <reference path="../../src/artikel/artikelService.d.ts" />
 import { ArtikelResource } from './artikelResource';
 import { Artikel } from './artikel';
 export declare class ArtikelComponent {
     artikel: Array<Artikel>;
     artikelMock: ArtikelResource;
     constructor();
-    addArtikel(artikel: Artikel): void;
+    addArtikel(name: string, price: number): void;
 }
