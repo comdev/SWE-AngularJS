@@ -7,7 +7,7 @@ import {View, Component, For} from 'angular2/angular2';
 
 import{ArtikelResource} from './artikelResource';
 import{Artikel} from './artikel';
-import{ArtikelService} from './artikelService';
+//import{ArtikelService} from './artikelService';
 @Component({
     selector: 'artikelComponent'
 })
@@ -18,18 +18,16 @@ import{ArtikelService} from './artikelService';
 
 export class ArtikelComponent{
 	
-	artikel: Array<Artikel>
-	artikelMock: ArtikelResource;
+	artikel: Array<Artikel>;
 	
 	constructor(){
-		console.log("Kontruktor von ArtikelController aufgerufen");
-		this.artikelMock = new ArtikelResource();
-		this.artikel = this.artikelMock.getAllArtikel();
+		console.log("Kontruktor von ArtikelComponent aufgerufen");
+		this.artikel = ArtikelResource.getAllArtikel();
 	}
 	
 	public addArtikel (name: string, price: number): void{
 		console.log("AddArtikel wird aufgerufen");
 		
-		ArtikelService.add(new Artikel(name, price));
+		ArtikelResource.add(new Artikel(name, price));
 	}
 }

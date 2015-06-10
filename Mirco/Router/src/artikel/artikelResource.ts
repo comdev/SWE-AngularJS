@@ -3,17 +3,16 @@
  */
 import{Artikel} from './Artikel';
 
-export class ArtikelResource{
-    artikel: Array<Artikel> =[
+var artikel: Array<Artikel> =[
 
         new Artikel("Tasche",1),
         new Artikel("Rucksack",1),
         new Artikel("Geldbeutel",1),
     ];
-    
-    getAllArtikel(){
-        return this.artikel;
-    }
+export let ArtikelResource: any = {
+    getAllArtikel(): Array<Artikel>{
+        return artikel;
+    },
     
     getArtikelByName(name: string): Artikel{
         if(name.length <= 0){
@@ -25,6 +24,10 @@ export class ArtikelResource{
                 return art;
             }
         })
+    },
+    
+    add(art: Artikel): void{
+        artikel.push(art);
     }
     
     

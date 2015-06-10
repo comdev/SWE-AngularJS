@@ -1,7 +1,8 @@
-import {View, Component, For} from 'angular2/angular2';
+/*import {View, Component, For} from 'angular2/angular2';
 
 import{Artikel} from './artikel';
 import{ArtikelResource} from './artikelResource';
+
 
 export let ArtikelService: any = {
 		
@@ -13,4 +14,4 @@ export let ArtikelService: any = {
 		var artikelMock: ArtikelResource = new ArtikelResource();
 		artikelMock.artikel.push(artikel);
 	}
-}
+}*/

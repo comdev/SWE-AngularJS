@@ -13,16 +13,15 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 var angular2_1 = require('angular2/angular2');
 var artikelResource_1 = require('./artikelResource');
 var artikel_1 = require('./artikel');
-var artikelService_1 = require('./artikelService');
+//import{ArtikelService} from './artikelService';
 var ArtikelComponent = (function () {
     function ArtikelComponent() {
-        console.log("Kontruktor von ArtikelController aufgerufen");
-        this.artikelMock = new artikelResource_1.ArtikelResource();
-        this.artikel = this.artikelMock.getAllArtikel();
+        console.log("Kontruktor von ArtikelComponent aufgerufen");
+        this.artikel = artikelResource_1.ArtikelResource.getAllArtikel();
     }
     ArtikelComponent.prototype.addArtikel = function (name, price) {
         console.log("AddArtikel wird aufgerufen");
-        artikelService_1.ArtikelService.add(new artikel_1.Artikel(name, price));
+        artikelResource_1.ArtikelResource.add(new artikel_1.Artikel(name, price));
     };
     ArtikelComponent = __decorate([
         angular2_1.Component({
