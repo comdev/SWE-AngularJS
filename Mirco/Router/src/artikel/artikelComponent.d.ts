@@ -4,4 +4,5 @@ export declare class ArtikelComponent {
     artikel: Array<Artikel>;
     artikelMock: ArtikelResource;
     constructor();
+    addArtikel(artikel: Artikel): void;
 }

@@ -24,6 +24,5 @@ export class ArtikelComponent{
 	
 	public addArtikel (artikel: Artikel): void{
 		ArtikelService.add(artikel);
-		}
 	}
 }

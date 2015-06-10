@@ -9,7 +9,7 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var listArtikelverwaltung_1 = require('../artikelverwaltung/listArtikelverwaltung');
-var listArtikel_1 = require('../artikel/listArtikel');
+var artikelComponent_1 = require('../artikel/artikelComponent');
 var warenkorb_1 = require('../warenkorb/warenkorb');
 var Navbar = (function () {
     function Navbar() {
@@ -20,7 +20,7 @@ var Navbar = (function () {
         }),
         router_1.RouteConfig([
             { path: '/warenkorb', component: warenkorb_1.Warenkorb, as: 'warenkorb' },
-            { path: '/artikel', component: listArtikel_1.ListArtikel, as: 'artikel' },
+            { path: '/artikel', component: artikelComponent_1.ArtikelComponent, as: 'artikel' },
             { path: '/artikelverwaltung', component: listArtikelverwaltung_1.ListArtikelverwaltung, as: 'artikelverwaltung' }
         ]),
         angular2_1.View({
