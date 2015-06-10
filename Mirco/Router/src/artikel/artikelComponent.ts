@@ -16,7 +16,7 @@ export class ArtikelComponent{
 	}
 	
 	public addArtikel (artikel: Artikel): void{
-		ArtikelService.
+		ArtikelService.add(artikel);
 		}
 	}
 }
