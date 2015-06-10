@@ -13,4 +13,4 @@ export let ArtikelService: any = {
 		var artikelMock: ArtikelResource = new ArtikelResource();
 		artikelMock.artikel.push(artikel);
 	}
-};
+}

@@ -15,8 +15,8 @@ export class ArtikelComponent{
 		this.artikel = this.artikelMock.getAllArtikel();
 	}
 	
-	/*public addArtikel (artikel: Artikel): void{
-		ArtikelService.add(artikel: Artikel);
+	public addArtikel (artikel: Artikel): void{
+		ArtikelService.
 		}
-	}*/
+	}
 }
