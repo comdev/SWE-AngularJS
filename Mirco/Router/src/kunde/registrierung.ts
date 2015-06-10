@@ -4,7 +4,7 @@ import {Kunde} from './kunde';
 import{Warenkorb} from '../warenkorb/warenkorb';
 
 @Component({
-    selector: 'registrieren'
+    selector: 'registrierung'
 })
 @RouteConfig([
     { path: '/warenkorb', component: Warenkorb, as: 'warenkorb'},

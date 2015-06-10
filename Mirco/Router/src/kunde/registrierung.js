@@ -25,7 +25,7 @@ var Registrierung = (function () {
     };
     Registrierung = __decorate([
         angular2_1.Component({
-            selector: 'registrieren'
+            selector: 'registrierung'
         }),
         router_1.RouteConfig([
             { path: '/warenkorb', component: warenkorb_1.Warenkorb, as: 'warenkorb' },
