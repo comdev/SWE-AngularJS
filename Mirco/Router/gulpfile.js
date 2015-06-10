@@ -16,6 +16,7 @@ gulp.task('typescript', function(){
 		target:'ES5',
     outDir: 'build',
     emitError:'true',
+    declaration: 'true',
     sourcemap: false
 	}))
     .pipe(gulp.dest('src/'))

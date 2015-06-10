@@ -4,19 +4,24 @@
 var Artikel_1 = require('./Artikel');
 var ArtikelResource = (function () {
     function ArtikelResource() {
-        var tasche = new Artikel_1.Artikel("Tasche", 1);
-        var rucksack = new Artikel_1.Artikel("Rucksack", 1);
-        var geldbeutel = new Artikel_1.Artikel("Geldbeutel", 1);
-        this.artikel = [];
-        this.artikel.push(tasche);
-        this.artikel.push(rucksack);
-        this.artikel.push(geldbeutel);
+        this.artikel = [
+            new Artikel_1.Artikel("Tasche", 1),
+            new Artikel_1.Artikel("Rucksack", 1),
+            new Artikel_1.Artikel("Geldbeutel", 1),
+        ];
     }
-    ArtikelResource.prototype.addArtikel = function (artikel) {
-        this.artikel.push(artikel);
-    };
     ArtikelResource.prototype.getAllArtikel = function () {
         return this.artikel;
+    };
+    ArtikelResource.prototype.getArtikelByName = function (name) {
+        if (name.length <= 0) {
+            return;
+        }
+        this.artikel.forEach(function (art) {
+            if (art.name === name) {
+                return art;
+            }
+        });
     };
     return ArtikelResource;
 })();

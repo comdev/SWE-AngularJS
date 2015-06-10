@@ -1,12 +1,12 @@
 import {View, Component} from 'angular2/angular2';
 
-interface IKunde{
+/*interface IKunde{
 	name: string;
 	nachname: string;
     email:string;
-}
+}*/
 
-export class Kunde implements IKunde{
+export class Kunde /*implements IKunde*/{
 	name: string;
 	nachname: string;
     email: string;
