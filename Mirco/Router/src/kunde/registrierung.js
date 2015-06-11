@@ -38,4 +38,3 @@ var Registrierung = (function () {
     return Registrierung;
 })();
 exports.Registrierung = Registrierung;
-angular2_1.bootstrap(Registrierung, [router_1.routerInjectables]);

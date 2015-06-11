@@ -1,4 +1,4 @@
-import {View, Component, For, bootstrap} from 'angular2/angular2';
+import {View, Component, For} from 'angular2/angular2';
 import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInjectables} from 'angular2/router';
 import {Kunde} from './kunde';
 import{Warenkorb} from '../warenkorb/warenkorb';
@@ -30,4 +30,4 @@ export class Registrierung {
         }
     }
 }
-bootstrap(Registrierung, [routerInjectables]);
+
