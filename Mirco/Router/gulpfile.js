@@ -6,7 +6,6 @@ var webserver = require('gulp-webserver');
 
 var jshint = require('gulp-jshint');
 
-var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 
  
@@ -40,13 +39,12 @@ gulp.task('jshint', function() {
 
 //changed task (Only pass through changed files)
 gulp.task('imagemin', function() {
-  var imgSrc = './src/img/**/*',
-      imgDst = './src/img_published';
-
-  gulp.src(imgSrc)
-      .pipe(changed(imgDst))
-      .pipe(imagemin())
-      .pipe(gulp.dest(imgDst));
+    return gulp.src('./src/img/*.jpg')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}]
+        }))
+        .pipe(gulp.dest('src/img_published'));
 });
 
-gulp.task('default', ['typescript','webserver','imagemin']);
+gulp.task('default', ['typescript','jshint','imagemin','webserver']);
