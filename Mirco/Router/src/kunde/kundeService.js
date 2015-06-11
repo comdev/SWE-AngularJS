@@ -1,6 +1,11 @@
 /// <reference path="kunde.d.ts"/>
 var kunde_1 = require('./kunde');
-var kunden = [new kunde_1.Kunde("Mirco", "Schwarz", "mirco@schwarz.de", "123")];
+var kunden = [
+    new kunde_1.Kunde("Mirco", "Schwarz", "mirco@schwarz.de", "123"),
+    new kunde_1.Kunde("Cornelius", "Mueller", "cornelius@mueller.de", "123"),
+    new kunde_1.Kunde("Sally", "Pfeiffer", "sally@pfeiffer.de", "123"),
+    new kunde_1.Kunde("Yael", "Wiedmann", "yael@wiedmann.de", "123")
+];
 exports.KundeService = {
     getKundeByName: function (name, nachname) {
         for (var position = 0; position < kunden.length; position++) {
