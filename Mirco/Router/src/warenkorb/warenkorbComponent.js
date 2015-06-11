@@ -25,6 +25,10 @@ var WarenkorbComponent = (function () {
     WarenkorbComponent.prototype.gesamtpreis = function () {
         return warenkorbResource_1.WarenkorbResource.getGesamtpreis();
     };
+    WarenkorbComponent.prototype.deleteAll = function () {
+        warenkorbResource_1.WarenkorbResource.deleteAll();
+        this.warenkorb = warenkorbResource_1.WarenkorbResource.getWarenkorb();
+    };
     WarenkorbComponent = __decorate([
         angular2_1.Component({
             selector: 'warenkorbComponent'

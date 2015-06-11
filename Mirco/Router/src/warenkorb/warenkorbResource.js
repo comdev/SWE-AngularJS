@@ -47,5 +47,8 @@ exports.WarenkorbResource = {
             }
         }
         return -1;
+    },
+    deleteAll: function () {
+        warenkorb = [];
     }
 };
