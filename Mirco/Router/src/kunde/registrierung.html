@@ -1,50 +1,58 @@
 <div>
-	<h2>Registrieren</h2>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<label>Vorname</label>
-		</div>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<input #vorname type="text"  required autofocus>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<label>Nachname</label>
-		</div>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<input #nachname type="text"  required autofocus>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			<label>Email</label>
-		</div>
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<input #email type="text"  required autofocus>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<label>Passwort</label>
+	<h2>Benutzer registrieren</h2>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<label>Vorname</label>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input #vorname type="text" class="form-control" required autofocus>
+				</div>
 			</div>
-			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-				<input #pw type="password"  required autofocus>
+					<br/>
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<label>Nachname</label>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input #nachname type="text" class="form-control"   required autofocus>
+				</div>
 			</div>
+					<br/>
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<label>Email</label>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input #email type="text" class="form-control"  required autofocus>
+				</div>
+			</div>
+					<br/>
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<label>Passwort</label>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input #pw type="password" class="form-control"   required autofocus>
+				</div>
+			</div>
+					<br/>
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<label>Passwort (Wiederholung)</label>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+					<input #pw2 type="password" class="form-control"   required autofocus>
+				</div>
+			</div>
+					<br/>
+			<button (click)="signIn(vorname.value, nachname.value, email.value, pw.value, pw2.value)" class="btn btn-primary" type="submit">registrieren</button>
+			<br/>
+			<br/>
+			<div style="color:indianred" [hidden]="vollstaendig">Leider, noch nicht ganz vollständig</div>
+			<div style="color:green" [hidden]="!registriert">Erfolgreich registriert!</div>
+			<div style="color:orange" [hidden]="passwort">Passwort ist nicht gleich</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-				<label>Passwort (Wiederholung)</label>
-			</div>
-			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-				<input #pw2 type="password"  required autofocus>
-			</div>
-		</div>
-	</div>
-	<button (click)="signIn(vorname.value, nachname.value, email.value, pw.value, pw2.value)" class="btn btn-primary" type="submit">
-		 registrieren</button>
-	<div style="color:indianred" [hidden]="vollstaendig">Leider, noch nicht ganz vollständig</div>	
-	<div style="color:green" [hidden]="!registriert">Erfolgreich registriert!</div>
-	<div style="color:orange" [hidden]="passwort">Passwort ist nicht gleich</div>
 </div>
