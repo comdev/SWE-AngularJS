@@ -4,7 +4,7 @@
 		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			<label>Vorname</label>
 		</div>
-		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 			<input #vorname type="text"  required autofocus>
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			<label>Nachname</label>
 		</div>
-		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 			<input #nachname type="text"  required autofocus>
 		</div>
 	</div>
@@ -20,12 +20,31 @@
 		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 			<label>Email</label>
 		</div>
-		<div class="col-xs-4 col-sm-4 col-md-6 col-lg-6">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 			<input #email type="text"  required autofocus>
 		</div>
 	</div>
-	<button (click)="signIn(vorname.value, nachname.value, email.value)" class="btn btn-primary" type="submit">
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<label>Passwort</label>
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<input #pw type="password"  required autofocus>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<label>Passwort (Wiederholung)</label>
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<input #pw2 type="password"  required autofocus>
+			</div>
+		</div>
+	</div>
+	<button (click)="signIn(vorname.value, nachname.value, email.value, pw.value, pw2.value)" class="btn btn-primary" type="submit">
 		 registrieren</button>
 	<div style="color:indianred" [hidden]="vollstaendig">Leider, noch nicht ganz vollständig</div>	
 	<div style="color:green" [hidden]="!registriert">Erfolgreich registriert!</div>
+	<div style="color:orange" [hidden]="passwort">Passwort ist nicht gleich</div>
 </div>

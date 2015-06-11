@@ -19,15 +19,23 @@ var Registrierung = (function () {
     function Registrierung() {
         this.vollstaendig = true;
         this.registriert = false;
+        this.passwort = true;
     }
-    Registrierung.prototype.signIn = function (name, nachname, email) {
+    Registrierung.prototype.signIn = function (name, nachname, email, passwort, passwort2) {
         console.log("Aufruf 'Sign In'");
         if (name !== "" && nachname !== "" && email !== "") {
-            var kunde = new kunde_1.Kunde(name, nachname, email);
-            kundeService_1.KundeService.add(kunde);
-            this.vollstaendig = true;
-            this.registriert = true;
-            console.log("Kunde wurde angelegt");
+            if (passwort !== passwort2 && passwort !== "") {
+                console.log("Passwort stimmt nicht überein.");
+                this.passwort = false;
+            }
+            else {
+                var kunde = new kunde_1.Kunde(name, nachname, email, passwort);
+                kundeService_1.KundeService.add(kunde);
+                this.vollstaendig = true;
+                this.registriert = true;
+                this.passwort = true;
+                console.log("Kunde wurde angelegt");
+            }
         }
         else {
             console.log("Es wurde kein Kunde angelegt");

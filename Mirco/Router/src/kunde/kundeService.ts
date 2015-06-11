@@ -3,7 +3,7 @@
 import {Kunde} from './kunde';
 
 
-var kunden: Array<Kunde> = [new Kunde("Mirco", "Schwarz", "mirco@schwarz.de")];
+var kunden: Array<Kunde> = [new Kunde("Mirco", "Schwarz", "mirco@schwarz.de","123")];
 
 export let KundeService: any = {
 

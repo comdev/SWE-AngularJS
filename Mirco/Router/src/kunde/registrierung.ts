@@ -25,22 +25,32 @@ import {KundeService} from './kundeService';
 export class Registrierung {
     kunde: Kunde;
     vollstaendig: boolean;
-    registriert: boolean; 
+    registriert: boolean;
+    passwort: boolean; 
 
     constructor(){
         this.vollstaendig = true;
         this.registriert = false;
+        this.passwort = true;
     }
 
-    signIn(name:string, nachname:string, email:string){
+    signIn(name:string, nachname:string, email:string, passwort: string, passwort2: string){
         console.log("Aufruf 'Sign In'");
-        if(name!== "" && nachname!== "" && email !== ""){
-            let kunde = new Kunde(name,nachname,email);
-            KundeService.add(kunde);
-            this.vollstaendig = true;
-            this.registriert = true;
-            console.log("Kunde wurde angelegt");
-        }else{
+        if (name!== "" && nachname!== "" && email !== ""){
+            if (passwort !== passwort2 && passwort !== ""){
+                console.log("Passwort stimmt nicht überein.")
+                this.passwort = false;
+            }
+            else {
+                let kunde = new Kunde(name,nachname,email,passwort);
+                KundeService.add(kunde);
+                this.vollstaendig = true;
+                this.registriert = true;
+                this.passwort = true;
+                console.log("Kunde wurde angelegt");
+            }
+        }
+        else {
             console.log("Es wurde kein Kunde angelegt");
             this.vollstaendig=false;
         }

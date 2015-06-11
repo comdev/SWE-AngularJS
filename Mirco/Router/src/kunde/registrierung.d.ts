@@ -7,6 +7,7 @@ export declare class Registrierung {
     kunde: Kunde;
     vollstaendig: boolean;
     registriert: boolean;
+    passwort: boolean;
     constructor();
-    signIn(name: string, nachname: string, email: string): void;
+    signIn(name: string, nachname: string, email: string, passwort: string, passwort2: string): void;
 }

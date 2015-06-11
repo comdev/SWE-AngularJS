@@ -1,14 +1,10 @@
-/*interface IKunde{
-    name: string;
-    nachname: string;
-    email:string;
-}*/
-var Kunde /*implements IKunde*/ = (function () {
-    function Kunde /*implements IKunde*/(name, nachname, email) {
+var Kunde = (function () {
+    function Kunde(name, nachname, email, passwort) {
         this.name = name;
         this.nachname = nachname;
         this.email = email;
+        this.passwort = passwort;
     }
-    return Kunde /*implements IKunde*/;
+    return Kunde;
 })();
-exports.Kunde /*implements IKunde*/ = Kunde /*implements IKunde*/;
+exports.Kunde = Kunde;
