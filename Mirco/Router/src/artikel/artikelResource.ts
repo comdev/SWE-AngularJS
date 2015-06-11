@@ -26,7 +26,9 @@ export let ArtikelResource: any = {
     },
     
     add(art: Artikel): void{
-        artikel.push(art);
+        if(!isNaN(art.preis) && art.preis > 0) {
+            artikel.push(art);
+        }
     }
     
     

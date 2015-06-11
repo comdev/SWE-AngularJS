@@ -20,6 +20,8 @@ exports.ArtikelResource = {
         });
     },
     add: function (art) {
-        artikel.push(art);
+        if (!isNaN(art.preis) && art.preis > 0) {
+            artikel.push(art);
+        }
     }
 };
