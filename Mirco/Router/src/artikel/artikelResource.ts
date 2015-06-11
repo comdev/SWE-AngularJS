@@ -4,9 +4,9 @@ import{Artikel} from './Artikel';
 
 var artikel: Array<Artikel> =[
 
-        new Artikel("Tasche",1),
-        new Artikel("Rucksack",1),
-        new Artikel("Geldbeutel",1),
+        new Artikel("Tasche",100),
+        new Artikel("Rucksack",20),
+        new Artikel("Geldbeutel",10),
     ];
 export let ArtikelResource: any = {
     getAllArtikel(): Array<Artikel>{
