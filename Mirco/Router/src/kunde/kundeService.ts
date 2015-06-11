@@ -6,8 +6,8 @@ import {Kunde} from './kunde';
 var kunden: Array<Kunde> = [
     new Kunde("Mirco", "Schwarz", "mirco@schwarz.de","123"),
     new Kunde("Cornelius", "Müller", "cornelius@mueller.de","123"),
-    new Kunde("Sally", "Pfeiffer", "sally@pfeiffer.de","123"),
-    new Kunde("Yael", "Wiedmann", "yael@wiedmann.de","123")
+    new Kunde("Sally", "Pfeifer", "sally@pfeifer.de","123"),
+    new Kunde("Yael", "Widmann", "yael@widmann.de","123")
     ];
 
 export let KundeService: any = {
