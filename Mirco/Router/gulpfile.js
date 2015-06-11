@@ -40,8 +40,8 @@ gulp.task('jshint', function() {
 
 //changed task (Only pass through changed files)
 gulp.task('imagemin', function() {
-  var imgSrc = './src/images/**/*',
-      imgDst = './build/images';
+  var imgSrc = './src/img/**/*',
+      imgDst = './src/img_published';
 
   gulp.src(imgSrc)
       .pipe(changed(imgDst))
@@ -49,4 +49,4 @@ gulp.task('imagemin', function() {
       .pipe(gulp.dest(imgDst));
 });
 
-gulp.task('default', ['typescript','webserver']);
+gulp.task('default', ['typescript','webserver','imagemin']);
