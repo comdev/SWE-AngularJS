@@ -21,14 +21,22 @@ export class WarenkorbComponent {
  	constructor(){
 		this.warenkorb = WarenkorbResource.getWarenkorb();
 	}
+    
     add(art: Artikel){
         WarenkorbResource.add(art);
     }
+    
     delete(art: Artikel){
         WarenkorbResource.delete(art);
     }
+    
     gesamtpreis(): number{
         return WarenkorbResource.getGesamtpreis();
+    }
+    
+    deleteAll(): void{
+        WarenkorbResource.deleteAll();
+        this.warenkorb = WarenkorbResource.getWarenkorb();
     }
 }
 
