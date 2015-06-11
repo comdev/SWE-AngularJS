@@ -25,8 +25,11 @@ import {KundeService} from './kundeService';
 export class Registrierung {
     kunde: Kunde;
     vollstaendig: boolean;
+    registriert: boolean; 
+
     constructor(){
-        this.vollstaendig=true;
+        this.vollstaendig = true;
+        this.registriert = false;
     }
 
     signIn(name:string, nachname:string, email:string){
@@ -34,6 +37,8 @@ export class Registrierung {
         if(name!== "" && nachname!== "" && email !== ""){
             let kunde = new Kunde(name,nachname,email);
             KundeService.add(kunde);
+            this.vollstaendig = true;
+            this.registriert = true;
             console.log("Kunde wurde angelegt");
         }else{
             console.log("Es wurde kein Kunde angelegt");

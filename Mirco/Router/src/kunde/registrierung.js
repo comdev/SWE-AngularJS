@@ -18,12 +18,15 @@ var kundeService_1 = require('./kundeService');
 var Registrierung = (function () {
     function Registrierung() {
         this.vollstaendig = true;
+        this.registriert = false;
     }
     Registrierung.prototype.signIn = function (name, nachname, email) {
         console.log("Aufruf 'Sign In'");
         if (name !== "" && nachname !== "" && email !== "") {
             var kunde = new kunde_1.Kunde(name, nachname, email);
             kundeService_1.KundeService.add(kunde);
+            this.vollstaendig = true;
+            this.registriert = true;
             console.log("Kunde wurde angelegt");
         }
         else {

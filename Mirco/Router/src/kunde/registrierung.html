@@ -26,5 +26,6 @@
 	</div>
 	<button (click)="signIn(vorname.value, nachname.value, email.value)" class="btn btn-primary" type="submit">
 		 registrieren</button>
-	<div style="color:indianred" [hidden]="vollstaendig">Leider, noch nicht ganz vollständig</div>
+	<div style="color:indianred" [hidden]="vollstaendig">Leider, noch nicht ganz vollständig</div>	
+	<div style="color:green" [hidden]="registriert == false">Erfolgreich registriert!</div>
 </div>
