@@ -2,6 +2,8 @@ import {View, Component, For} from 'angular2/angular2';
 import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInjectables} from 'angular2/router';
 import {Kunde} from './kunde';
 import{Warenkorb} from '../warenkorb/warenkorb';
+import {KundeService} from './kundeService';
+
 
 @Component({
     selector: 'registrierung'
@@ -24,7 +26,7 @@ export class Registrierung {
     signIn(name:string, nachname:string, email:string){
         if(name!== null && nachname!==null && email !== null){
             let kunde = new Kunde(name,nachname,email);
-            this.kunde = kunde;
+            KundeService.add(kunde);
         }else{
             this.vollstaendig=false;
         }

@@ -10,6 +10,7 @@ var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var kunde_1 = require('./kunde');
 var warenkorb_1 = require('../warenkorb/warenkorb');
+var kundeService_1 = require('./kundeService');
 var Registrierung = (function () {
     function Registrierung() {
         this.vollstaendig = true;
@@ -17,7 +18,7 @@ var Registrierung = (function () {
     Registrierung.prototype.signIn = function (name, nachname, email) {
         if (name !== null && nachname !== null && email !== null) {
             var kunde = new kunde_1.Kunde(name, nachname, email);
-            this.kunde = kunde;
+            kundeService_1.KundeService.add(kunde);
         }
         else {
             this.vollstaendig = false;
