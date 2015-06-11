@@ -20,13 +20,14 @@ var Registrierung = (function () {
         this.vollstaendig = true;
     }
     Registrierung.prototype.signIn = function (name, nachname, email) {
-        console.log("Neuer Kunde wird angelegt.");
-        if (name !== null && nachname !== null && email !== null) {
+        console.log("Aufruf 'Sign In'");
+        if (name !== "" && nachname !== "" && email !== "") {
             var kunde = new kunde_1.Kunde(name, nachname, email);
             kundeService_1.KundeService.add(kunde);
             console.log("Kunde wurde angelegt");
         }
         else {
+            console.log("Es wurde kein Kunde angelegt");
             this.vollstaendig = false;
         }
     };

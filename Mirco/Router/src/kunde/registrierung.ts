@@ -30,12 +30,13 @@ export class Registrierung {
     }
 
     signIn(name:string, nachname:string, email:string){
-        console.log("Neuer Kunde wird angelegt.");
-        if(name!== null && nachname!==null && email !== null){
+        console.log("Aufruf 'Sign In'");
+        if(name!== "" && nachname!== "" && email !== ""){
             let kunde = new Kunde(name,nachname,email);
             KundeService.add(kunde);
             console.log("Kunde wurde angelegt");
         }else{
+            console.log("Es wurde kein Kunde angelegt");
             this.vollstaendig=false;
         }
     }
