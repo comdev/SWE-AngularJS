@@ -11,6 +11,7 @@ var router_1 = require('angular2/router');
 var artikelComponent_1 = require('../artikel/artikelComponent');
 var warenkorbComponent_1 = require('../warenkorb/warenkorbComponent');
 var registrierung_1 = require('../kunde/registrierung');
+var home_1 = require('../home/home');
 var Navbar = (function () {
     function Navbar() {
     }
@@ -19,6 +20,8 @@ var Navbar = (function () {
             selector: 'navbar'
         }),
         router_1.RouteConfig([
+            { path: '/', component: home_1.Home, as: 'home' },
+            { path: '/home', component: home_1.Home, as: 'home' },
             { path: '/warenkorb', component: warenkorbComponent_1.WarenkorbComponent, as: 'warenkorb' },
             { path: '/artikel', component: artikelComponent_1.ArtikelComponent, as: 'artikel' },
             { path: '/registrierung', component: registrierung_1.Registrierung, as: 'registrierung' }
