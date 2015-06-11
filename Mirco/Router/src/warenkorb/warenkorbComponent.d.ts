@@ -10,5 +10,4 @@ export declare class WarenkorbComponent {
     add(art: Artikel): void;
     delete(art: Artikel): void;
     gesamtpreis(): number;
-    deleteAll(): void;
 }
