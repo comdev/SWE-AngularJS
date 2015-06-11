@@ -10,6 +10,14 @@ exports.KundeService = {
         }
         return null;
     },
+    getKundeByEmail: function (email) {
+        for (var position = 0; position < kunden.length; position++) {
+            if (kunden[position].email === email) {
+                return kunden[position];
+            }
+        }
+        return null;
+    },
     getAllKunden: function () {
         return kunden;
     },

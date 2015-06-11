@@ -1,9 +1,12 @@
-import {View, Component, bootstrap} from 'angular2/angular2';
+
+import {View, Component, bootstrap,If} from 'angular2/angular2';
 import {Router, RouterOutlet, RouterLink, RouteConfig, RouteParams, routerInjectables} from 'angular2/router';
 import {ArtikelComponent} from '../artikel/artikelComponent';
 import {WarenkorbComponent} from '../warenkorb/warenkorbComponent';
 import {Registrierung} from '../kunde/registrierung';
 import {Home} from '../home/home';
+import {SignInService} from '../kunde/signInService';
+import {Kunde} from '../kunde/kunde';
 
 @Component({
     selector: 'navbar'
@@ -17,10 +20,30 @@ import {Home} from '../home/home';
 ])
 @View({
     templateUrl: 'src/navbar/navbar.html',
-    directives: [RouterOutlet, RouterLink]
+    directives: [RouterOutlet, RouterLink, If]
 })
 export class Navbar {
+    eingeloggt: boolean;
+    logInfailed: boolean;
+    kunde: Kunde = new Kunde("","","","");
     constructor() {
+        this.eingeloggt = false;
+    }
+    
+    einloggen(email: string, passwort: string){
+       let kunde1: Kunde = SignInService.einloggen(email, passwort);
+       if(kunde1 !== null){
+           this.eingeloggt = true;
+           this.logInfailed = false;
+           this.kunde = kunde1;
+       } else{
+           this.logInfailed = true;
+       }
+    }
+    
+    ausloggen(){
+        this.eingeloggt = false;
+        this.kunde = null;
     }
 }
 

@@ -12,9 +12,28 @@ var artikelComponent_1 = require('../artikel/artikelComponent');
 var warenkorbComponent_1 = require('../warenkorb/warenkorbComponent');
 var registrierung_1 = require('../kunde/registrierung');
 var home_1 = require('../home/home');
+var signInService_1 = require('../kunde/signInService');
+var kunde_1 = require('../kunde/kunde');
 var Navbar = (function () {
     function Navbar() {
+        this.kunde = new kunde_1.Kunde("", "", "", "");
+        this.eingeloggt = false;
     }
+    Navbar.prototype.einloggen = function (email, passwort) {
+        var kunde1 = signInService_1.SignInService.einloggen(email, passwort);
+        if (kunde1 !== null) {
+            this.eingeloggt = true;
+            this.logInfailed = false;
+            this.kunde = kunde1;
+        }
+        else {
+            this.logInfailed = true;
+        }
+    };
+    Navbar.prototype.ausloggen = function () {
+        this.eingeloggt = false;
+        this.kunde = null;
+    };
     Navbar = __decorate([
         angular2_1.Component({
             selector: 'navbar'
@@ -28,7 +47,7 @@ var Navbar = (function () {
         ]),
         angular2_1.View({
             templateUrl: 'src/navbar/navbar.html',
-            directives: [router_1.RouterOutlet, router_1.RouterLink]
+            directives: [router_1.RouterOutlet, router_1.RouterLink, angular2_1.If]
         })
     ], Navbar);
     return Navbar;
