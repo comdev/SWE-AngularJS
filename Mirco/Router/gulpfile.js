@@ -31,7 +31,7 @@ gulp.task('webserver', function() {
 // JSHint, a tool that helps to detect errors and potential
 // problems in your JavaScript code.
 gulp.task('jshint', function() {
-  gulp.src('./src/scripts/*.js')
+  gulp.src('./src/**/*.js')
       .pipe(jshint())
       .pipe(jshint.reporter('default'));
 
