@@ -4,7 +4,7 @@ var gulp = require('gulp')
 var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
 
-var jshint = require('gulp-jshint');
+var tslint = require('gulp-tslint');
 
 var imagemin = require('gulp-imagemin');
 
@@ -28,13 +28,12 @@ gulp.task('webserver', function() {
     }));
 });
 
-// JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-gulp.task('jshint', function() {
-  gulp.src('./src/**/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter('default'));
-
+// Tslint, a tool that helps to detect errors and potential
+// problems in your Typscript code.
+gulp.task('tslint', function(){
+  gulp.src('./src/**/*.ts')
+    .pipe(tslint())
+    .pipe(tslint.report('verbose'));
 });
 
 //changed task (Only pass through changed files)
@@ -47,4 +46,4 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest('src/img_published'));
 });
 
-gulp.task('default', ['typescript','jshint','imagemin','webserver']);
+gulp.task('default', ['typescript','tslint','imagemin','webserver']);
