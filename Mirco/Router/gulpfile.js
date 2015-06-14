@@ -5,6 +5,7 @@ var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
 var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
+var uglify = require('gulp-uglify');
 
  
 gulp.task('typescript', function(){
@@ -42,4 +43,10 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest('src/style_published'));
 });
 
-gulp.task('default', ['typescript','minify-css','imagemin','webserver']);
+gulp.task('compress', function(){
+    return gulp.src('src/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['typescript','minify-css','imagemin','compress','webserver']);
