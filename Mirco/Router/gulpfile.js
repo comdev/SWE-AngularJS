@@ -4,8 +4,10 @@ var gulp = require('gulp')
 var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
 
+/*
 var tslint = require('gulp-tslint');
 var cache = require('gulp-cached');
+*/
 
 var imagemin = require('gulp-imagemin');
 
@@ -31,14 +33,14 @@ gulp.task('webserver', function() {
 
 // Tslint, a tool that helps to detect errors and potential
 // problems in your Typscript code.
-gulp.task('tslint', function(){
-  gulp.src('./src/**/*.ts')
-    .pipe(cache('tslint'))
+//gulp.task('tslint', function(){
+//  gulp.src('./src/**/*.ts')
+ /*   .pipe(cache('tslint'))
     .pipe(tslint())
     .pipe(tslint.report('verbose', {
       emitError: false
     }));
-});
+});*/
 
 //changed task (Only pass through changed files)
 gulp.task('imagemin', function() {
@@ -50,4 +52,4 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest('src/img_published'));
 });
 
-gulp.task('default', ['typescript','tslint','imagemin','webserver']);
+gulp.task('default', ['typescript','imagemin','webserver']);
