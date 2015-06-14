@@ -30,9 +30,9 @@ export class Navbar {
         this.eingeloggt = false;
     }
     
-    einloggen(email: string, passwort: string){
+    einloggen(email: string, passwort: string) {
        let kunde1: Kunde = SignInService.einloggen(email, passwort);
-       if(kunde1 !== null){
+       if(kunde1 !== null) {
            this.eingeloggt = true;
            this.logInfailed = false;
            this.kunde = kunde1;
@@ -41,9 +41,13 @@ export class Navbar {
        }
     }
     
-    ausloggen(){
+    ausloggen() {
         this.eingeloggt = false;
         this.kunde = new Kunde("","","","");
+        var inputValue = (<HTMLInputElement>document.getElementById('InputE')).value;
+        inputValue = "";
+        var inputValue = (<HTMLInputElement>document.getElementById('InputP')).value;
+        inputValue = "";
     }
 }
 
