@@ -3,12 +3,7 @@
 var gulp = require('gulp')
 var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
-
-/*
-var tslint = require('gulp-tslint');
-var cache = require('gulp-cached');
-*/
-
+var minifyCss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 
  
@@ -31,17 +26,6 @@ gulp.task('webserver', function() {
     }));
 });
 
-// Tslint, a tool that helps to detect errors and potential
-// problems in your Typscript code.
-//gulp.task('tslint', function(){
-//  gulp.src('./src/**/*.ts')
- /*   .pipe(cache('tslint'))
-    .pipe(tslint())
-    .pipe(tslint.report('verbose', {
-      emitError: false
-    }));
-});*/
-
 //changed task (Only pass through changed files)
 gulp.task('imagemin', function() {
     return gulp.src('./src/img/*.jpg')
@@ -52,4 +36,10 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest('src/img_published'));
 });
 
-gulp.task('default', ['typescript','imagemin','webserver']);
+gulp.task('minify-css', function() {
+    return gulp.src('src/style/style.css')
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest('src/style_published'));
+});
+
+gulp.task('default', ['typescript','minify-css','imagemin','webserver']);

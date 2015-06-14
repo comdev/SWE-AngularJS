@@ -6,11 +6,9 @@
   "devDependencies": {
     "angular-local-storage": "^0.2.2",
     "gulp": "^3.8.11",
-    "gulp-cached": "^1.1.0",
-    "gulp-changed": "^1.2.1",
     "gulp-imagemin": "^2.2.1",
+    "gulp-minify-css": "^1.1.6",
     "gulp-tsc": "^0.10.0",
-    "gulp-tslint": "^2.0.0",
     "gulp-webserver": "^0.9.1"
   }
 }
