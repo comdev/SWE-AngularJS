@@ -5,6 +5,7 @@ var typescript = require('gulp-tsc');
 var webserver = require('gulp-webserver');
 
 var tslint = require('gulp-tslint');
+var cache = require('gulp-cached');
 
 var imagemin = require('gulp-imagemin');
 
@@ -32,8 +33,11 @@ gulp.task('webserver', function() {
 // problems in your Typscript code.
 gulp.task('tslint', function(){
   gulp.src('./src/**/*.ts')
+    .pipe(cache('tslint'))
     .pipe(tslint())
-    .pipe(tslint.report('verbose'));
+    .pipe(tslint.report('verbose', {
+      emitError: false
+    }));
 });
 
 //changed task (Only pass through changed files)
