@@ -44,10 +44,10 @@ export class Navbar {
     ausloggen() {
         this.eingeloggt = false;
         this.kunde = new Kunde("","","","");
-        var inputValue = (<HTMLInputElement>document.getElementById('InputE')).value;
-        inputValue = "";
-        var inputValue = (<HTMLInputElement>document.getElementById('InputP')).value;
-        inputValue = "";
+        var inputEmail = (<HTMLInputElement>document.getElementById('InputEmail')).value;
+        inputEmail = "";
+        var inputPasswort = (<HTMLInputElement>document.getElementById('InputPasswort')).value;
+        inputPasswort = "";
     }
 }
 
