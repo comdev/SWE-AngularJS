@@ -56,5 +56,5 @@ export let WarenkorbResource: any = {
     },
     deleteAll(): void {
         warenkorb = [];
-    };
+    }
 }

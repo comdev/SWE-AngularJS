@@ -16,5 +16,6 @@ export let SignInService: any = {
 				return kunde;
 			}
 		}
+		return null;
 	}
 }
