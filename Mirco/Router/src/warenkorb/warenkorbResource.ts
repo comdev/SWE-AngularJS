@@ -49,8 +49,8 @@ export let WarenkorbResource: any = {
         return warenkorb;
     },
     
-    notIn(artikel:Artikel):number{
-        for (let i = 0; i<warenkorb.length; i++){
+    notIn(artikel: Artikel): number{
+        for (let i = 0; i < warenkorb.length; i++){
             if (warenkorb[i].artikel.name === artikel.name){
                 return i;
             }
