@@ -32,7 +32,7 @@ var Navbar = (function () {
     };
     Navbar.prototype.ausloggen = function () {
         this.eingeloggt = false;
-        this.kunde = null;
+        this.kunde = new kunde_1.Kunde("", "", "", "");
     };
     Navbar = __decorate([
         angular2_1.Component({
