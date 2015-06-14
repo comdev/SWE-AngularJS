@@ -33,10 +33,8 @@ var Navbar = (function () {
     Navbar.prototype.ausloggen = function () {
         this.eingeloggt = false;
         this.kunde = new kunde_1.Kunde("", "", "", "");
-        var inputEmail = document.getElementById('InputEmail').value;
-        inputEmail = "";
-        var inputPasswort = document.getElementById('InputPasswort').value;
-        inputPasswort = "";
+        document.getElementById('InputEmail').value = "";
+        document.getElementById('InputP').value = "";
     };
     Navbar = __decorate([
         angular2_1.Component({
