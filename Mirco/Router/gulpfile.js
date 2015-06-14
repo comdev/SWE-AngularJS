@@ -34,13 +34,13 @@ gulp.task('imagemin', function() {
             progressive: true,
             svgoPlugins: [{removeViewBox: false}]
         }))
-        .pipe(gulp.dest('src/img_published'));
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('minify-css', function() {
-    return gulp.src('src/style/style.css')
+    return gulp.src('src/style.css')
         .pipe(minifyCss({compatibility: 'ie8'}))
-        .pipe(gulp.dest('src/style_published'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('compress', function(){
