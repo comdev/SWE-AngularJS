@@ -18,10 +18,10 @@
 			<form class="navbar-form navbar-right" [hidden]="eingeloggt">
 				<label [hidden]="!logInfailed" style= "color: white">Login hat leider nicht geklappt </label>
 				<div class="form-group">
-					<input #email type="text" placeholder="Email" class="form-control">
+					<input #email type="text" placeholder="Email" class="form-control" id="InputE">
 				</div>
 				<div class="form-group">
-					<input #passwort type="password" placeholder="Password" class="form-control">
+					<input #passwort type="password" placeholder="Password" class="form-control" id="InputP">
 				</div>
 				<button type="button" class="btn btn-primary" (click)="einloggen(email.value,passwort.value)">Sign in</button>
 				<button type="button" class="btn btn-success" router-link="registrierung">Registrieren</button>
