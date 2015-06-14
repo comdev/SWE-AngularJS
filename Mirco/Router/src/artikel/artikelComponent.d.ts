@@ -5,6 +5,8 @@
 import { Artikel } from './artikel';
 export declare class ArtikelComponent {
     artikel: Array<Artikel>;
+    hinzugefuegt: boolean;
+    geklappt: boolean;
     constructor();
     addArtikel(name: string, price: number): void;
     toWarenkorb(artikel: Artikel): void;

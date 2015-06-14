@@ -18,10 +18,21 @@ var ArtikelComponent = (function () {
     function ArtikelComponent() {
         console.log("Kontruktor von ArtikelComponent aufgerufen");
         this.artikel = artikelResource_1.ArtikelResource.getAllArtikel();
+        this.hinzugefuegt = false;
+        this.geklappt = true;
     }
     ArtikelComponent.prototype.addArtikel = function (name, price) {
         console.log("AddArtikel wird aufgerufen");
-        artikelResource_1.ArtikelResource.add(new artikel_1.Artikel(name, price));
+        var artikel = new artikel_1.Artikel(name, price);
+        if (!isNaN(artikel.preis) && artikel.preis > 0) {
+            artikelResource_1.ArtikelResource.add(artikel);
+            this.hinzugefuegt = true;
+            this.geklappt = true;
+        }
+        else {
+            this.hinzugefuegt = false;
+            this.geklappt = false;
+        }
     };
     ArtikelComponent.prototype.toWarenkorb = function (artikel) {
         console.log("Add to Warenkorb");

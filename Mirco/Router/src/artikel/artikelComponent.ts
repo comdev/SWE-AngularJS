@@ -25,12 +25,13 @@ export class ArtikelComponent{
 	constructor(){
 		console.log("Kontruktor von ArtikelComponent aufgerufen");
 		this.artikel = ArtikelResource.getAllArtikel();
-        this.hinzugefuegt = true;
+        this.hinzugefuegt = false;
+        this.geklappt = true;
     }
 	
 	public addArtikel (name: string, price: number): void {
 		console.log("AddArtikel wird aufgerufen");
-        artikel: Artikel = new Artikel(name, price);
+        let artikel = new Artikel(name, price);
 		if( !isNaN(artikel.preis) && artikel.preis > 0) {
             ArtikelResource.add(artikel);
             this.hinzugefuegt = true;
