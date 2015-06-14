@@ -20,6 +20,7 @@ var Registrierung = (function () {
         this.vollstaendig = true;
         this.registriert = false;
         this.passwort = true;
+        this.email = true;
     }
     Registrierung.prototype.signIn = function (name, nachname, email, passwort, passwort2) {
         console.log("Aufruf 'Sign In'");
@@ -29,12 +30,19 @@ var Registrierung = (function () {
                 this.passwort = false;
             }
             else {
-                var kunde = new kunde_1.Kunde(name, nachname, email, passwort);
-                kundeService_1.KundeService.add(kunde);
-                this.vollstaendig = true;
-                this.registriert = true;
-                this.passwort = true;
-                console.log("Kunde wurde angelegt");
+                if (kundeService_1.KundeService.getKundeByEmail(email)) {
+                    console.log("Kunde gibt es schon");
+                    this.email = false;
+                }
+                else {
+                    var kunde = new kunde_1.Kunde(name, nachname, email, passwort);
+                    kundeService_1.KundeService.add(kunde);
+                    this.vollstaendig = true;
+                    this.registriert = true;
+                    this.passwort = true;
+                    this.email = true;
+                    console.log("Kunde wurde angelegt");
+                }
             }
         }
         else {

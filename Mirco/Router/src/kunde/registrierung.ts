@@ -27,11 +27,13 @@ export class Registrierung {
     vollstaendig: boolean;
     registriert: boolean;
     passwort: boolean; 
+    email: boolean;
 
     constructor(){
         this.vollstaendig = true;
         this.registriert = false;
         this.passwort = true;
+        this.email = true;
     }
 
     signIn(name:string, nachname:string, email:string, passwort: string, passwort2: string){
@@ -42,12 +44,19 @@ export class Registrierung {
                 this.passwort = false;
             }
             else {
-                let kunde = new Kunde(name,nachname,email,passwort);
-                KundeService.add(kunde);
-                this.vollstaendig = true;
-                this.registriert = true;
-                this.passwort = true;
-                console.log("Kunde wurde angelegt");
+                if (KundeService.getKundeByEmail(email)) {
+                    console.log("Kunde gibt es schon")
+                    this.email = false;
+                }
+                else {
+                    let kunde = new Kunde(name,nachname,email,passwort);
+                    KundeService.add(kunde);
+                    this.vollstaendig = true;
+                    this.registriert = true;
+                    this.passwort = true;
+                    this.email = true;
+                    console.log("Kunde wurde angelegt");
+                }
             }
         }
         else {

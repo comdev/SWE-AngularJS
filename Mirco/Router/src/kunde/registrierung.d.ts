@@ -8,6 +8,7 @@ export declare class Registrierung {
     vollstaendig: boolean;
     registriert: boolean;
     passwort: boolean;
+    email: boolean;
     constructor();
     signIn(name: string, nachname: string, email: string, passwort: string, passwort2: string): void;
 }
