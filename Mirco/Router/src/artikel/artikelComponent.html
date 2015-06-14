@@ -13,4 +13,6 @@
 Name<input #newname type="text"/>
 Preis<input #newprice type="text"/>
 
-<button class="btn btn-default" (click)="addArtikel(newname.value, newprice.value)" type="submit" data-toggle="modal" data-target="#modal_addArtikel">Hinzufügen</button>
+<button class="btn btn-default" (click)="addArtikel(newname.value, newprice.value)" type="submit">Hinzufügen</button>
+<label [hidden]="!hinzugefuegt" style="color:red">Artikel wurde hinzugefuegt</label>
+<label [hidden]="geklappt" style="color:green">Artikel konnte nicht hinzugefuegt werden</label>

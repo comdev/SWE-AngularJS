@@ -20,16 +20,25 @@ import{WarenkorbResource} from '../warenkorb/warenkorbResource';
 export class ArtikelComponent{
 	
 	artikel: Array<Artikel>;
-	
+	hinzugefuegt: boolean;
+    geklappt: boolean;
 	constructor(){
 		console.log("Kontruktor von ArtikelComponent aufgerufen");
 		this.artikel = ArtikelResource.getAllArtikel();
-	}
+        this.hinzugefuegt = true;
+    }
 	
-	public addArtikel (name: string, price: number): void{
+	public addArtikel (name: string, price: number): void {
 		console.log("AddArtikel wird aufgerufen");
-		
-		ArtikelResource.add(new Artikel(name, price));
+        artikel: Artikel = new Artikel(name, price);
+		if( !isNaN(artikel.preis) && artikel.preis > 0) {
+            ArtikelResource.add(artikel);
+            this.hinzugefuegt = true;
+            this.geklappt = true;
+        } else {
+            this.hinzugefuegt = false;
+            this.geklappt = false;
+        }
 	}
 	
 	public toWarenkorb(artikel: Artikel): void{
