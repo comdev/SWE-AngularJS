@@ -43,7 +43,7 @@ export class Navbar {
     
     ausloggen(){
         this.eingeloggt = false;
-        this.kunde = null;
+        this.kunde = new Kunde("","","","");
     }
 }
 

@@ -3,9 +3,9 @@
 var artikel_1 = require('../artikel/artikel');
 var warenkorb_1 = require('./warenkorb');
 var warenkorb = [
-    new warenkorb_1.Warenkorb(new artikel_1.Artikel('Tisch', 10), 4),
-    new warenkorb_1.Warenkorb(new artikel_1.Artikel('Sofa', 10), 3),
-    new warenkorb_1.Warenkorb(new artikel_1.Artikel('Stuhl', 8), 1)
+    new warenkorb_1.Warenkorb(new artikel_1.Artikel("Tisch", 10), 4),
+    new warenkorb_1.Warenkorb(new artikel_1.Artikel("Sofa", 10), 3),
+    new warenkorb_1.Warenkorb(new artikel_1.Artikel("Stuhl", 8), 1)
 ];
 exports.WarenkorbResource = {
     add: function (art) {

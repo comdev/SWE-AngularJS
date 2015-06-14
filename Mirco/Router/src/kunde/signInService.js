@@ -12,5 +12,6 @@ exports.SignInService = {
                 return kunde;
             }
         }
+        return null;
     }
 };
