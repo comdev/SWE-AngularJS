@@ -28,11 +28,17 @@ var Registrierung = (function () {
             if (passwort !== passwort2 && passwort !== "") {
                 console.log("Passwort stimmt nicht überein.");
                 this.passwort = false;
+                this.registriert = false;
+                this.email = true;
+                this.vollstaendig = true;
             }
             else {
                 if (kundeService_1.KundeService.getKundeByEmail(email)) {
                     console.log("Kunde gibt es schon");
                     this.email = false;
+                    this.passwort = true;
+                    this.vollstaendig = true;
+                    this.registriert = false;
                 }
                 else {
                     var kunde = new kunde_1.Kunde(name, nachname, email, passwort);

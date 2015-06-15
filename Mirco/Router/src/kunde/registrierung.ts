@@ -42,11 +42,17 @@ export class Registrierung {
             if (passwort !== passwort2 && passwort !== ""){
                 console.log("Passwort stimmt nicht überein.")
                 this.passwort = false;
+                this.registriert = false;
+                this.email = true;
+                this.vollstaendig = true;
             }
             else {
                 if (KundeService.getKundeByEmail(email)) {
                     console.log("Kunde gibt es schon")
                     this.email = false;
+                    this.passwort = true;
+                    this.vollstaendig = true;
+                    this.registriert = false;
                 }
                 else {
                     let kunde = new Kunde(name,nachname,email,passwort);
