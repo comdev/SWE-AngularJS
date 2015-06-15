@@ -6,9 +6,9 @@ import {Warenkorb} from './warenkorb';
 
 
 var warenkorb: Array<Warenkorb> = [
-    new Warenkorb(new Artikel("Tisch", 10), 4) ,
+    new Warenkorb(new Artikel("Tisch", 599), 4) ,
     new Warenkorb(new Artikel("Sofa", 10), 3) ,
-    new Warenkorb(new Artikel("Stuhl", 8), 1)
+    new Warenkorb(new Artikel("Stuhl", 99), 1)
 ];
 
 export let WarenkorbResource: any = {
